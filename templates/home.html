@@ -1,58 +1,31 @@
 <!DOCTYPE 
 <html>
   <head>
-    <title> HSV - Scouting </title>
-    <style> 
-      h1 {
-        font-size: 40px;
-        font-family: sans-serif;
-        font-weight: normal;
-        color: rgb(255, 0, 0);
-        text-align: center;
-      }
-
-      h2 {
-        font-size: 30px;
-        font-family: sans-serif;
-        font-weight: normal;
-        color: rgb(255, 0, 0);
-      }
-
-      p {
-        font-family: sans-serif;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        font-family: sans-serif;
-        font-weight: normal;
-        font-size: 18px;
-        color: rgb(0, 255, 0);
-      }
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
       #balls {
-        width: 100%;
-        height: 360px;
-        object-fit: cover;
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
+        height: 100px;
+        width:100%;
+        object-fit:cover;
       }
     </style>
+    <title> HSV - Scouting </title>
   </head>
 
   <body>
-    <div id="container">
-      <h1> HSV - Scouting  </h1>
-      <img id = "balls" src="https://hsv--rudizulauf.repl.co/static/Bild.jpg">
-      <h2> Mannschaften </h2>
-      <p class="bodytext"> TODO - Zeige Mannschaften</p>
-      <div style="text-align:center;"> 
-         <button> Kontakt </button>
-      </div>
-      <p> Anderer Text</p>
+    <div>
+      <h1 class="text-center mt-2 mb-4"> 
+        HSV - Scouting 
+      </h1>
+      <img class="img-fluid" id = "balls" src="https://hsv--rudizulauf.repl.co/static/Bild.jpg">
+      <h2 class="text-center"> Mannschaften </h2>
+      <p> 
+        {% for team in teams %}
+          <button  class="btn btn-outline-primary"> {{team["id"]}} </button>
+        {% endfor %}
+      </p>
     </div>
   </body>
 </html>
