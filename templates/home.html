@@ -23,19 +23,36 @@
         font-weight: normal;
       }
 
+      .bodytext {
+        font-family: sans-serif;
+        font-weight: normal;
+        font-size: 18px;
+        color: rgb(0, 255, 0);
+      }
+
       #balls {
         width: 100%;
         height: 360px;
         object-fit: cover;
       }
+
+      #container {
+        max-width: 720px;
+        margin: 0 auto;
+      }
     </style>
   </head>
 
   <body>
-    <h1> HSV - Scouting  </h1>
-    <img id = "balls" src="https://hsv--rudizulauf.repl.co/static/Bild.jpg">
-    <h2> Mannschaften </h2>
-    <p> TODO - Zeige Mannschaften</p>
-    <button> Kontakt </button>
+    <div id="container">
+      <h1> HSV - Scouting  </h1>
+      <img id = "balls" src="https://hsv--rudizulauf.repl.co/static/Bild.jpg">
+      <h2> Mannschaften </h2>
+      <p class="bodytext"> TODO - Zeige Mannschaften</p>
+      <div style="text-align:center;"> 
+         <button> Kontakt </button>
+      </div>
+      <p> Anderer Text</p>
+    </div>
   </body>
 </html>
