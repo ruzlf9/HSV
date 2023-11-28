@@ -17,12 +17,27 @@
   </head>
 
   <body>
-    {% include 'nav.html' %}
-    <div>
-      <h1 class="text-center mt-4 mb-4"> 
-        HSV - Scouting 
-      </h1>
-      <!-- <img class="img-fluid" id = "head" src="https://hsv--rudizulauf.repl.co/static/hsvHead.png">-->
+    <div class="mb-4">
+      {% include 'nav_lock.html' %}
+      <br>
+      <br>
+      <br>
+      <div class="mt-4">
+        <h1 class="text-center"> 
+          HSV - Scouting 
+        </h1>
+        <form action="/login" method="post">
+          <div class="container col-4 mt-4">
+            <div class="mb-3">
+              <label for="mailadress" class="form-label">E-Mail Adresse</label>
+              <input type="email" class="form-control" id="mailadress" placeholder="name@mail.de">
+            </div>
+            <div class="mb-3">
+              <label for="pw" class="form-label">Passwort</label>
+              <input type="password" class="form-control" id="pw">
+            </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>
