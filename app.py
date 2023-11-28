@@ -1,6 +1,10 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect, url_for, session
+from datetime import timedelta
+
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
+app.permanent_session_lifetime = timedelta(seconds=10)
 
 TEAMS = [
   {
@@ -26,8 +30,32 @@ TEAMS = [
 ]
 
 @app.route("/")
-def hello_world():
-  return render_template("home.html", teams=TEAMS)
+def start():
+  return render_template("home_lock.html", teams=TEAMS)
+
+@app.route("/home")
+def home():
+  if "user" in session:
+    return render_template("home.html", teams=TEAMS, user=session["user"])
+  else:
+    return render_template('home_lock.html', error='Zugangsdaten falsch')
+    
+
+@app.route('/login', methods=['POST'])
+def login():
+  email = request.form.get('email')
+  password = request.form.get('password')
+  print(email)
+  print(password)
+  
+  if authenticate_user(email, password):
+    session["user"] = email
+    return redirect(url_for('home'))
+  else:
+    return render_template('home_lock.html', error='Zugangsdaten falsch')
+
+def authenticate_user(email, password):
+  return email == 'Test@Test.com' and password == 'password'
 
 
 @app.route("/api/teams")

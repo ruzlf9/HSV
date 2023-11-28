@@ -13,19 +13,23 @@
         width:100%;
       }
     </style>
-    <title> HSV - Scouting</title>
+    <title> HSV - Scouting </title>
   </head>
 
   <body>
     <div class="mb-4">
-      {% include 'nav.html' %}
+      {% include 'nav_lock.html' %}
       <br>
       <br>
       <br>
       <div class="mt-4">
         <h1 class="text-center"> 
-          HSV - Scouting 
+          HSV - Scouting
         </h1>
+        {% if error %}
+          <p style="color:red;"> {{ error }}</p>
+        {% endif %}
+        {% include 'login.html' %}
       </div>
     </div>
   </body>
