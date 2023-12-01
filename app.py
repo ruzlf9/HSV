@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for, session
 from datetime import timedelta
 import datetime
-
+import numpy as np
 from flask.typing import TemplateTestCallable
 
 
@@ -66,6 +66,23 @@ TEAMS = [
 ]
 ids = {"U19":0, "U17":1, "U16":2}
 
+users = [
+  {
+  "email": "U19@U19.com",
+  "pw": "U19",
+  "rights": ["U19","U17"]
+},
+  {
+  "email": "U17@U17.com",
+  "pw": "U17",
+  "rights": ["U17"]
+},
+  {
+  "email": "U16@U16.com",
+  "pw": "U16",
+  "rights": ["U16"]
+}]
+
 EXTERNAL_PLAYERS = [
   {
     "Vorname": "Test",
@@ -110,6 +127,19 @@ def authenticate_user(email, password):
 def team(team_id):
   if "user" in session:
     return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], teams=TEAMS)
+  else:
+    return render_template('home_lock.html', error='Zugangsdaten falsch')
+
+@app.route("/<team_id>/player/<player_id>")
+def player(team_id, player_id):
+  if "user" in session:
+    team_infos = TEAMS[ids[team_id]]
+    print("------------------------------")
+    print(team_infos)
+    ind = np.where((np.array([d['Vorname'] for d in team_infos["players"]]) == player_id.split("_")[0]) & (np.array([d['Nachname'] for d in team_infos["players"]]) == player_id.split("_")[1]))[0][0]
+    player_infos = team_infos["players"][ind]
+    
+    return render_template("player.html", team=team_infos, player = player_infos, user=session["user"], teams=TEAMS)
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
