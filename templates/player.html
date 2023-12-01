@@ -24,7 +24,11 @@
       <br>
       <div class="mt-4">
         <h1 class="text-center"> 
-          Spielerseite - {{player["Vorname"]}} {{player["Nachname"]}} aus der {{team["name"]}}
+          {% if external %}
+            Externer Spieler - {{player["Vorname"]}} {{player["Nachname"]}} für die {{team["name"]}}
+          {% else %}
+            Spielerseite - {{player["Vorname"]}} {{player["Nachname"]}} aus der {{team["name"]}}
+          {% endif %}
         </h1>
       </div>
     </div>

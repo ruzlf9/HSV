@@ -9,60 +9,112 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 #app.permanent_session_lifetime = timedelta(seconds=10)
 
+playersu19 = [
+  {
+    "Vorname": "Ali",
+    "Nachname": "Mem",
+    "Geburtsdatum": datetime.datetime(2005, 5, 17).strftime("%x")
+  },
+  {
+    "Vorname": "Tobias",
+    "Nachname": "Muster",
+    "Geburtsdatum": datetime.datetime(2004, 2, 17).strftime("%x")
+  }
+]
+
+externalu19 = [
+  {
+    "Vorname": "Stefan",
+    "Nachname": "Neu",
+    "Geburtsdatum": datetime.datetime(2005, 2, 11).strftime("%x"),
+    "Verein": "Hordel"
+  },
+  {
+    "Vorname": "Paul",
+    "Nachname": "Münch",
+    "Geburtsdatum": datetime.datetime(2004, 5, 7).strftime("%x"),
+    "Verein": "TSC"
+  }
+]
+
+playersu17 = [
+  {
+    "Vorname": "Ali",
+    "Nachname": "Mem",
+    "Geburtsdatum": datetime.datetime(2007, 5, 17).strftime("%x")
+  },
+  {
+    "Vorname": "Tobias",
+    "Nachname": "Muster",
+    "Geburtsdatum": datetime.datetime(2007, 2, 17).strftime("%x")
+  }
+]
+
+externalu17 = [
+  {
+    "Vorname": "Stefan",
+    "Nachname": "Neu",
+    "Geburtsdatum": datetime.datetime(2007, 2, 11).strftime("%x"),
+    "Verein": "TSC"
+  },
+  {
+    "Vorname": "Paul",
+    "Nachname": "Münch",
+    "Geburtsdatum": datetime.datetime(2007, 5, 7).strftime("%x"),
+    "Verein": "BVB"
+  }
+]
+
+playersu16 = [
+  {
+    "Vorname": "Ali",
+    "Nachname": "Mem",
+    "Geburtsdatum": datetime.datetime(2008, 5, 17).strftime("%x")
+  },
+  {
+    "Vorname": "Tobias",
+    "Nachname": "Muster",
+    "Geburtsdatum": datetime.datetime(2008, 2, 17).strftime("%x")
+  }
+]
+
+externalu16 = [
+  {
+    "Vorname": "Stefan",
+    "Nachname": "Neu",
+    "Geburtsdatum": datetime.datetime(2008, 2, 11).strftime("%x"),
+    "Verein": "Brünninghausen"
+  },
+  {
+    "Vorname": "Paul",
+    "Nachname": "Münch",
+    "Geburtsdatum": datetime.datetime(2008, 5, 7).strftime("%x"),
+    "Verein": "Hörde"
+  }
+]
+
 TEAMS = [
   {
     "id": "U19",
     "name": "U19",
     "coaches" : ["Marvin","Justus"],
-    "players": [
-      {
-        "Vorname": "Justin",
-        "Nachname": "Test",
-        "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-      },
-      {
-        "Vorname": "Justin",
-        "Nachname": "Test",
-        "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-      }
-    ]
+    "players": playersu19,
+    "external":externalu19
   },
-
   {
     "id": "U17",
     "name": "U17",
     "coaches" : ["Holger","Rudi"],
-    "players": [
-      {
-        "Vorname": "Justin",
-        "Nachname": "Test",
-        "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-      },
-      {
-        "Vorname": "Justin",
-        "Nachname": "Test",
-        "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-      }
-    ]
+    "players": playersu17,
+    "external":externalu17
   },
-
   {
     "id": "U16",
     "name": "U16",
     "coaches" : ["Lukas","Niklas"],
-    "players": [
-      {
-        "Vorname": "Justin",
-        "Nachname": "Test",
-        "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-      },
-      {
-        "Vorname": "Justin",
-        "Nachname": "Test",
-        "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-      }
-    ]
-  }
+    "players": playersu16,
+    "external": externalu16
+  },
 ]
 ids = {"U19":0, "U17":1, "U16":2}
 
@@ -82,19 +134,6 @@ users = [
   "pw": "U16",
   "rights": ["U16"]
 }]
-
-EXTERNAL_PLAYERS = [
-  {
-    "Vorname": "Test",
-    "Nachname": "Nachname",
-    "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-  },
-  {
-    "Vorname": "Test2",
-    "Nachname": "Nachname2",
-    "Geburtsdatum": datetime.datetime(2020, 5, 17).strftime("%x")
-  }
-]
 
 @app.route("/")
 def start():
@@ -134,20 +173,26 @@ def team(team_id):
 def player(team_id, player_id):
   if "user" in session:
     team_infos = TEAMS[ids[team_id]]
-    print("------------------------------")
-    print(team_infos)
     ind = np.where((np.array([d['Vorname'] for d in team_infos["players"]]) == player_id.split("_")[0]) & (np.array([d['Nachname'] for d in team_infos["players"]]) == player_id.split("_")[1]))[0][0]
     player_infos = team_infos["players"][ind]
     
-    return render_template("player.html", team=team_infos, player = player_infos, user=session["user"], teams=TEAMS)
+    return render_template("player.html", team=team_infos, 
+                           player = player_infos, user=session["user"], 
+                           teams=TEAMS, external=False)
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
 
-@app.route("/external")
-def external():
+@app.route("/<team_id>/external/<player_id>")
+def external(team_id, player_id):
   if "user" in session:
-    return render_template("external.html", user=session["user"], players=EXTERNAL_PLAYERS, teams=TEAMS)
+    team_infos = TEAMS[ids[team_id]]
+    ind = np.where((np.array([d['Vorname'] for d in team_infos["external"]]) == player_id.split("_")[0]) & (np.array([d['Nachname'] for d in team_infos["external"]]) == player_id.split("_")[1]))[0][0]
+    player_infos = team_infos["external"][ind]
+
+    return render_template("player.html", team=team_infos, 
+                           player = player_infos, user=session["user"], 
+                           teams=TEAMS, external=True)
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
