@@ -1,0 +1,20 @@
+<div class="col-10 container text-center">
+  <div class="mt-4">
+    <h1> Berichte </h1>
+  </div>
+  <div class="mt-4">
+    <h3> Aktueller Bericht ({{ player["Berichte"][-1]["date"] }}) </h3>
+      <div>
+        {{ player["Berichte"][-1]["bericht"] }}
+      </div>
+  </div>
+  <div class="mt-4">
+    <h3> Neuer Bericht </h3>
+  </div>
+  <form method="post">
+    <div class="form-group">
+      <textarea class="form-control" id="new_report_text" rows="3" name="new_report_text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" name="save_report" value="save">Bericht speichern</button>
+  </form>
+</div>

@@ -13,12 +13,28 @@ playersu19 = [
   {
     "Vorname": "Ali",
     "Nachname": "Mem",
-    "Geburtsdatum": datetime.datetime(2005, 5, 17).strftime("%x")
+    "Geburtsdatum": datetime.datetime(2005, 5, 17).strftime("%x"),
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   },
   {
     "Vorname": "Tobias",
     "Nachname": "Muster",
-    "Geburtsdatum": datetime.datetime(2004, 2, 17).strftime("%x")
+    "Geburtsdatum": datetime.datetime(2004, 2, 17).strftime("%x"),
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   }
 ]
 
@@ -27,13 +43,29 @@ externalu19 = [
     "Vorname": "Stefan",
     "Nachname": "Neu",
     "Geburtsdatum": datetime.datetime(2005, 2, 11).strftime("%x"),
-    "Verein": "Hordel"
+    "Verein": "Hordel",
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   },
   {
     "Vorname": "Paul",
     "Nachname": "Münch",
     "Geburtsdatum": datetime.datetime(2004, 5, 7).strftime("%x"),
-    "Verein": "TSC"
+    "Verein": "TSC",
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   }
 ]
 
@@ -41,12 +73,28 @@ playersu17 = [
   {
     "Vorname": "Ali",
     "Nachname": "Mem",
-    "Geburtsdatum": datetime.datetime(2007, 5, 17).strftime("%x")
+    "Geburtsdatum": datetime.datetime(2007, 5, 17).strftime("%x"),
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   },
   {
     "Vorname": "Tobias",
     "Nachname": "Muster",
-    "Geburtsdatum": datetime.datetime(2007, 2, 17).strftime("%x")
+    "Geburtsdatum": datetime.datetime(2007, 2, 17).strftime("%x"),
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   }
 ]
 
@@ -55,13 +103,29 @@ externalu17 = [
     "Vorname": "Stefan",
     "Nachname": "Neu",
     "Geburtsdatum": datetime.datetime(2007, 2, 11).strftime("%x"),
-    "Verein": "TSC"
+    "Verein": "TSC",
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   },
   {
     "Vorname": "Paul",
     "Nachname": "Münch",
     "Geburtsdatum": datetime.datetime(2007, 5, 7).strftime("%x"),
-    "Verein": "BVB"
+    "Verein": "BVB",
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   }
 ]
 
@@ -69,12 +133,28 @@ playersu16 = [
   {
     "Vorname": "Ali",
     "Nachname": "Mem",
-    "Geburtsdatum": datetime.datetime(2008, 5, 17).strftime("%x")
+    "Geburtsdatum": datetime.datetime(2008, 5, 17).strftime("%x"),
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   },
   {
     "Vorname": "Tobias",
     "Nachname": "Muster",
-    "Geburtsdatum": datetime.datetime(2008, 2, 17).strftime("%x")
+    "Geburtsdatum": datetime.datetime(2008, 2, 17).strftime("%x"),
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   }
 ]
 
@@ -83,13 +163,29 @@ externalu16 = [
     "Vorname": "Stefan",
     "Nachname": "Neu",
     "Geburtsdatum": datetime.datetime(2008, 2, 11).strftime("%x"),
-    "Verein": "Brünninghausen"
+    "Verein": "Brünninghausen",
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   },
   {
     "Vorname": "Paul",
     "Nachname": "Münch",
     "Geburtsdatum": datetime.datetime(2008, 5, 7).strftime("%x"),
-    "Verein": "Hörde"
+    "Verein": "Hörde",
+    "Berichte": [{
+      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+                 },
+                 {
+      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+    }]
   }
 ]
 
@@ -169,13 +265,27 @@ def team(team_id):
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
-@app.route("/<team_id>/player/<player_id>")
+@app.route("/<team_id>/player/<player_id>", methods=['GET', 'POST'])
 def player(team_id, player_id):
   if "user" in session:
     team_infos = TEAMS[ids[team_id]]
-    ind = np.where((np.array([d['Vorname'] for d in team_infos["players"]]) == player_id.split("_")[0]) & (np.array([d['Nachname'] for d in team_infos["players"]]) == player_id.split("_")[1]))[0][0]
+    ind = np.where((np.array([d['Vorname'] for d in team_infos["players"]]) == 
+                    player_id.split("_")[0]) & 
+                   (np.array([d['Nachname'] for d in team_infos["players"]]) == 
+                    player_id.split("_")[1]))[0][0]
     player_infos = team_infos["players"][ind]
     
+    if request.method == 'POST':
+        if request.form.get('save_report') == 'save':
+          player_infos["Berichte"].append({"date":datetime.datetime.today().strftime("%x"),
+                                           "bericht":request.form.get('new_report_text')})
+        else:
+            pass # unknown
+    elif request.method == 'GET':
+      return render_template("player.html", team=team_infos, 
+       player = player_infos, user=session["user"], 
+       teams=TEAMS, external=False)
+
     return render_template("player.html", team=team_infos, 
                            player = player_infos, user=session["user"], 
                            teams=TEAMS, external=False)
@@ -183,18 +293,32 @@ def player(team_id, player_id):
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
 
-@app.route("/<team_id>/external/<player_id>")
+@app.route("/<team_id>/external/<player_id>", methods=['GET', 'POST'])
 def external(team_id, player_id):
-  if "user" in session:
-    team_infos = TEAMS[ids[team_id]]
-    ind = np.where((np.array([d['Vorname'] for d in team_infos["external"]]) == player_id.split("_")[0]) & (np.array([d['Nachname'] for d in team_infos["external"]]) == player_id.split("_")[1]))[0][0]
-    player_infos = team_infos["external"][ind]
+    if "user" in session:
+      team_infos = TEAMS[ids[team_id]]
+      ind = np.where((np.array([d['Vorname'] for d in team_infos["external"]]) == 
+                      player_id.split("_")[0]) & 
+                     (np.array([d['Nachname'] for d in team_infos["external"]]) == 
+                      player_id.split("_")[1]))[0][0]
+      player_infos = team_infos["external"][ind]
 
-    return render_template("player.html", team=team_infos, 
-                           player = player_infos, user=session["user"], 
-                           teams=TEAMS, external=True)
-  else:
-    return render_template('home_lock.html', error='Zugangsdaten falsch')
+      if request.method == 'POST':
+          if request.form.get('save_report') == 'save':
+            player_infos["Berichte"].append({"date":datetime.datetime.today().strftime("%x"),
+                                             "bericht":request.form.get('new_report_text')})
+          else:
+              pass # unknown
+      elif request.method == 'GET':
+        return render_template("player.html", team=team_infos, 
+         player = player_infos, user=session["user"], 
+         teams=TEAMS, external=False)
+
+      return render_template("player.html", team=team_infos, 
+                             player = player_infos, user=session["user"], 
+                             teams=TEAMS, external=True)
+    else:
+      return render_template('home_lock.html', error='Zugangsdaten falsch')
 
 
 @app.route("/api/teams")

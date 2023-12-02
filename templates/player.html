@@ -19,18 +19,9 @@
   <body>
     <div class="mb-4">
       {% include 'nav.html' %}
-      <br>
-      <br>
-      <br>
-      <div class="mt-4">
-        <h1 class="text-center"> 
-          {% if external %}
-            Externer Spieler - {{player["Vorname"]}} {{player["Nachname"]}} für die {{team["name"]}}
-          {% else %}
-            Spielerseite - {{player["Vorname"]}} {{player["Nachname"]}} aus der {{team["name"]}}
-          {% endif %}
-        </h1>
-      </div>
+      {% include 'player_title.html' %}
+      {% include 'player_reports.html' %}
+      {% include 'player_facts.html' %}
     </div>
   </body>
 </html>

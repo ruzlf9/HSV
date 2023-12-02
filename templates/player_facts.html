@@ -1,0 +1,12 @@
+<div class="col-10 container text-center">
+  <div class="mt-4">
+    <h1> Infos </h1>
+  </div>
+  <div class="mt-4">
+    {% for fact in player %}
+      {% if fact != "Berichte" %}
+        <h3> {{ fact }} : {{ player[fact]}} </h3>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
