@@ -260,14 +260,15 @@ def login():
 
 @app.route("/<team_id>")
 def team(team_id):
-  if "user" in session:
-    return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], teams=TEAMS, rights=session["rights"])
+  if "user" in session and team_id in session["rights"]:
+    return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], 
+                           teams=TEAMS, rights=session["rights"])
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
 @app.route("/<team_id>/player/<player_id>", methods=['GET', 'POST'])
 def player(team_id, player_id):
-  if "user" in session:
+  if "user" in session and team_id in session["rights"]:
     team_infos = TEAMS[ids[team_id]]
     ind = np.where((np.array([d['Vorname'] for d in team_infos["players"]]) == 
                     player_id.split("_")[0]) & 
@@ -295,7 +296,7 @@ def player(team_id, player_id):
 
 @app.route("/<team_id>/external/<player_id>", methods=['GET', 'POST'])
 def external(team_id, player_id):
-    if "user" in session:
+    if "user" in session and team_id in session["rights"]:
       team_infos = TEAMS[ids[team_id]]
       ind = np.where((np.array([d['Vorname'] for d in team_infos["external"]]) == 
                       player_id.split("_")[0]) & 
