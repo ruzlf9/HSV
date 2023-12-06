@@ -24,6 +24,19 @@
           HSV - Scouting 
         </h1>
       </div>
+
+      <div class="mt-4">
+        <h2 class="text-center"> Herzlich Willkommen {{ user.split("@")[0].split(".")[0].capitalize() }} ! </h2>
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-center"> Du hast Zugriff für folgende Mannschaften: </h2
+        <ul>
+          {% for team in rights %}
+            <h4 class="text-center"> <a class="link" href="/{{ team }}">{{ team }}</a> </h4>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </body>
 </html>

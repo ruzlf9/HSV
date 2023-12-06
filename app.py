@@ -216,9 +216,9 @@ ids = {"U19":0, "U17":1, "U16":2}
 
 users = [
   {
-  "email": "U19@U19.com",
-  "pw": "U19",
-  "rights": ["U19","U17"]
+  "email": "rudi.zulauf@hombruchersv.de",
+  "pw": "rudi",
+  "rights": ["U19","U17","U16"]
 },
   {
   "email": "U17@U17.com",
@@ -238,7 +238,8 @@ def start():
 @app.route("/home")
 def home():
   if "user" in session:
-    return render_template("home.html", teams=TEAMS, user=session["user"])
+    return render_template("home.html", teams=TEAMS, 
+                           user=session["user"], rights=session["rights"])
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
     
@@ -248,20 +249,19 @@ def login():
   email = request.form.get('email')
   password = request.form.get('password')
   
-  if authenticate_user(email, password):
-    session["user"] = email
-    return redirect(url_for('home'))
-  else:
-    return render_template('home_lock.html', error='Zugangsdaten falsch')
-
-def authenticate_user(email, password):
-  return email == 'Test@Test.com' and password == 'password'
+  for user in users:
+    if user["email"] == email and user["pw"] == password:
+      session["user"] = email
+      session["rights"] = user["rights"]
+      return redirect(url_for('home'))
+      
+  return render_template('home_lock.html', error='Zugangsdaten falsch')
 
 
 @app.route("/<team_id>")
 def team(team_id):
   if "user" in session:
-    return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], teams=TEAMS)
+    return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], teams=TEAMS, rights=session["rights"])
   else:
     return render_template('home_lock.html', error='Zugangsdaten falsch')
 
@@ -312,11 +312,11 @@ def external(team_id, player_id):
       elif request.method == 'GET':
         return render_template("player.html", team=team_infos, 
          player = player_infos, user=session["user"], 
-         teams=TEAMS, external=False)
+         teams=TEAMS, external=False, rights=session["rights"])
 
       return render_template("player.html", team=team_infos, 
                              player = player_infos, user=session["user"], 
-                             teams=TEAMS, external=True)
+                             teams=TEAMS, external=True, rights=session["rights"])
     else:
       return render_template('home_lock.html', error='Zugangsdaten falsch')
 
