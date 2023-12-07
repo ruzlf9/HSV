@@ -1,0 +1,29 @@
+<div class="mt-4">
+  <h2> 
+    Externe Spieler
+  </h2>
+</div>
+<div class="mt-4">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col"> </th>
+        <th scope="col">Vorname</th>
+        <th scope="col">Nachname</th>
+        <th scope="col">Geburtsdatum</th>
+        <th scope="col">Verein </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in team["external"] %}
+        <tr>
+          <td><p><a class="link-opacity-100-hover" href="/{{team["name"]}}/external/{{ player["Vorname"] }}_{{ player["Nachname"] }}">Link</a></p></td>
+          <td>{{ player["Vorname"] }}</td>
+          <td>{{ player["Nachname"] }}</td>
+          <td>{{ player["Geburtsdatum"] }}</td>
+          <td>{{ player["Verein"] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div> 
