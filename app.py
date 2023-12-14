@@ -1,9 +1,7 @@
-from flask import Flask, render_template, jsonify, request, redirect, url_for, session
-from datetime import timedelta
 import datetime
-import numpy as np
-from flask.typing import TemplateTestCallable
 
+import numpy as np
+from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -17,11 +15,11 @@ playersu19 = [
     "Geburtsdatum": datetime.datetime(2005, 5, 17).strftime("%x"),
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   },
   {
@@ -31,11 +29,11 @@ playersu19 = [
     "Geburtsdatum": datetime.datetime(2004, 2, 17).strftime("%x"),
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   }
 ]
@@ -79,11 +77,11 @@ playersu17 = [
     "Geburtsdatum": datetime.datetime(2007, 5, 17).strftime("%x"),
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   },
   {
@@ -93,11 +91,11 @@ playersu17 = [
     "Geburtsdatum": datetime.datetime(2007, 2, 17).strftime("%x"),
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   }
 ]
@@ -141,11 +139,11 @@ playersu16 = [
     "Geburtsdatum": datetime.datetime(2008, 5, 17).strftime("%x"),
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   },
   {
@@ -155,11 +153,11 @@ playersu16 = [
     "Geburtsdatum": datetime.datetime(2008, 2, 17).strftime("%x"),
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   }
 ]
@@ -201,6 +199,14 @@ TEAMS = [
     "name": "U19",
     "coaches" : ["Marvin","Justus"],
     "players": playersu19,
+    "formation": {'save_formation': 'save', 'LS1': 'Ali_Mem', 'ST1': '', 'RS1': '',
+                  'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Ali_Mem',
+                  'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
+                  'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
+                  'RIV1': '', 'RV1': 'Tobias_Muster', 'LV2': '', 'LIV2': '',
+                  'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
+                  'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
+                  'TW3': ''},
     "external":externalu19
   },
   {
@@ -208,6 +214,14 @@ TEAMS = [
     "name": "U17",
     "coaches" : ["Holger","Rudi"],
     "players": playersu17,
+    "formation": {'save_formation': 'save', 'LS1': '', 'ST1': '', 'RS1': '',
+      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Ali_Mem',
+      'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
+      'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
+      'RIV1': '', 'RV1': 'Tobias_Muster', 'LV2': '', 'LIV2': '',
+      'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
+      'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
+      'TW3': ''},
     "external":externalu17
   },
   {
@@ -215,6 +229,14 @@ TEAMS = [
     "name": "U16",
     "coaches" : ["Lukas","Niklas"],
     "players": playersu16,
+    "formation": {'save_formation': 'save', 'LS1': '', 'ST1': '', 'RS1': '',
+      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Ali_Mem',
+      'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
+      'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
+      'RIV1': '', 'RV1': 'Tobias_Muster', 'LV2': '', 'LIV2': '',
+      'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
+      'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
+      'TW3': ''},
     "external": externalu16
   },
 ]
@@ -263,10 +285,22 @@ def login():
       
   return render_template('home_lock.html', error='Zugangsdaten falsch')
 
+@app.route("/logout")
+def logout():
+  session.pop("user", None)
+  session.pop("rights", None)
+  return render_template("home_lock.html", teams=TEAMS)
 
-@app.route("/<team_id>")
+
+@app.route("/<team_id>", methods=['GET', 'POST'])
 def team(team_id):
   if "user" in session and team_id in session["rights"]:
+    if request.method == 'POST':
+      if request.form.get('save_formation') == 'save':
+        team = TEAMS[ids[team_id]]
+        team["formation"] = request.form.to_dict()
+      else:
+        pass
     return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], 
                            teams=TEAMS, rights=session["rights"])
   else:
