@@ -34,6 +34,13 @@
                 <textarea class="form-control text-center" id="nachname" rows="1" name="nachname"></textarea>
               </div>
 
+              {% if external %}
+                <div class="form-group">
+                  <label for="verein">Verein</label>
+                  <textarea class="form-control text-center" id="verein" rows="1" name="verein"></textarea>
+                </div>
+              {% endif %}
+
               <div class="form-group">
                 <label for="gebdatum">Geburtsdatum (TT.MM.JJJJ)</label>
                 <textarea class="form-control text-center" id="gebdatum" rows="1" name="gebdatum"></textarea>
@@ -50,7 +57,7 @@
               </div>
 
               <br>
-              <button type="submit" class="btn btn-primary" name="add_player" value="save">Spieler anlegen</button>
+              <button type="submit" class="btn btn-primary" name="add_player" value={{ external }}>Spieler anlegen</button>
             </form>
           </div>
         </div>

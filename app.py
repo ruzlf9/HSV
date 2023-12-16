@@ -11,8 +11,8 @@ playersu19 = [
   {
     "Vorname": "Ali",
     "Nachname": "Mem",
-    "Rating": "A",
     "Geburtsdatum": "11.04.2006",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -25,8 +25,8 @@ playersu19 = [
   {
     "Vorname": "Tobias",
     "Nachname": "Muster",
-    "Rating": "B",
     "Geburtsdatum": "11.04.2006",
+    "Rating": "B",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -42,8 +42,9 @@ externalu19 = [
   {
     "Vorname": "Stefan",
     "Nachname": "Neu",
-    "Geburtsdatum": "11.04.2006",
     "Verein": "DJK TuS Hordel",
+    "Geburtsdatum": "11.04.2006",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -54,10 +55,11 @@ externalu19 = [
     }]
   },
   {
-    "Vorname": "Paul",
-    "Nachname": "Münch",
+    "Vorname": "Stefan",
+    "Nachname": "Neu",
+    "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
-    "Verein": "TSC Eintracht Dortmund",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -73,8 +75,8 @@ playersu17 = [
   {
     "Vorname": "Ali",
     "Nachname": "Mem",
-    "Rating": "A",
     "Geburtsdatum": "11.04.2006",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -87,8 +89,8 @@ playersu17 = [
   {
     "Vorname": "Tobias",
     "Nachname": "Muster",
-    "Rating": "B",
     "Geburtsdatum": "11.04.2006",
+    "Rating": "B",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -104,8 +106,9 @@ externalu17 = [
   {
     "Vorname": "Stefan",
     "Nachname": "Neu",
+    "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
-    "Verein": "TSC Eintracht Dortmund",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -116,10 +119,11 @@ externalu17 = [
     }]
   },
   {
-    "Vorname": "Paul",
-    "Nachname": "Münch",
+    "Vorname": "Stefan",
+    "Nachname": "Neu",
+    "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
-    "Verein": "BVB",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -135,8 +139,8 @@ playersu16 = [
   {
     "Vorname": "Ali",
     "Nachname": "Mem",
-    "Rating": "A",
     "Geburtsdatum": "11.04.2006",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -149,8 +153,8 @@ playersu16 = [
   {
     "Vorname": "Tobias",
     "Nachname": "Muster",
-    "Rating": "C",
     "Geburtsdatum": "11.04.2006",
+    "Rating": "C",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -166,8 +170,9 @@ externalu16 = [
   {
     "Vorname": "Stefan",
     "Nachname": "Neu",
+    "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
-    "Verein": "FC Brünninghausen",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -178,10 +183,11 @@ externalu16 = [
     }]
   },
   {
-    "Vorname": "Paul",
-    "Nachname": "Münch",
+    "Vorname": "Stefan",
+    "Nachname": "Neu",
+    "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
-    "Verein": "Hörder SC",
+    "Rating": "A",
     "Berichte": [{
       "date": "11.04.2006",
       "bericht": "Alt Bericht"
@@ -296,24 +302,45 @@ def logout():
 def team(team_id):
   if "user" in session and team_id in session["rights"]:
     if request.method == 'POST':
-      if request.form.get("add_player") == "save":
+      print(request.form)
+      if request.form.get("add_player") == "False":
         team = TEAMS[ids[team_id]]
 
         gebdatum = request.form.get("gebdatum")
 
         new_player = {'Vorname': request.form.get("vorname"), 
                       'Nachname': request.form.get("nachname"), 
-                      'Rating': request.form.get("rating"), 
                       'Geburtsdatum': gebdatum, 
+                      'Rating': request.form.get("rating"), 
                       'Berichte': [{'date': datetime.datetime.today().strftime("%x"), 
                                     'bericht': request.form.get("report")}
                                    ]}
         
         team["players"].append(new_player)
+
+      if request.form.get("add_player") == "True":
+        team = TEAMS[ids[team_id]]
+  
+        gebdatum = request.form.get("gebdatum")
+  
+        new_player = {'Vorname': request.form.get("vorname"), 
+                      'Nachname': request.form.get("nachname"), 
+                      "Verein": request.form.get("verein"),
+                      'Geburtsdatum': gebdatum, 
+                      'Rating': request.form.get("rating"), 
+                      'Berichte': [{'date': datetime.datetime.today().strftime("%x"), 
+                                    'bericht': request.form.get("report")}
+                                   ]}
+  
+        team["external"].append(new_player)
         
-      if request.form.get('new_player') == 'add':
+      if request.form.get('new_player') == 'own':
         return render_template("team/new_player.html", team=TEAMS[ids[team_id]], user=session["user"], 
-                               teams=TEAMS, rights=session["rights"])
+                               teams=TEAMS, rights=session["rights"],external=False)
+
+      if request.form.get('new_player') == 'external':
+        return render_template("team/new_player.html", team=TEAMS[ids[team_id]], user=session["user"], 
+                               teams=TEAMS, rights=session["rights"], external=True)
       
       if request.form.get('save_formation') == 'save':
         team = TEAMS[ids[team_id]]
