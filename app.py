@@ -303,6 +303,20 @@ def team(team_id):
   if "user" in session and team_id in session["rights"]:
     if request.method == 'POST':
       print(request.form)
+
+      # Delete Player
+      if request.form.get("delete_player") != "":
+        team = TEAMS[ids[team_id]]
+
+        player = request.form.get("delete_player")
+        print(player)
+        vorname = player.split("_")[0]
+        nachname = player.split("_")[1]
+        print(vorname)
+        print(nachname)
+        print(team["players"])
+        
+      # Add own player
       if request.form.get("add_player") == "False":
         team = TEAMS[ids[team_id]]
 
@@ -318,6 +332,7 @@ def team(team_id):
         
         team["players"].append(new_player)
 
+      # Add external player
       if request.form.get("add_player") == "True":
         team = TEAMS[ids[team_id]]
   
@@ -333,15 +348,18 @@ def team(team_id):
                                    ]}
   
         team["external"].append(new_player)
-        
+
+      # Go to page to add new player
       if request.form.get('new_player') == 'own':
         return render_template("team/new_player.html", team=TEAMS[ids[team_id]], user=session["user"], 
                                teams=TEAMS, rights=session["rights"],external=False)
 
+      # Go to page to add external player
       if request.form.get('new_player') == 'external':
         return render_template("team/new_player.html", team=TEAMS[ids[team_id]], user=session["user"], 
                                teams=TEAMS, rights=session["rights"], external=True)
-      
+
+      # Save current formation
       if request.form.get('save_formation') == 'save':
         team = TEAMS[ids[team_id]]
         team["formation"] = request.form.to_dict()
