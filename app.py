@@ -46,11 +46,11 @@ externalu19 = [
     "Verein": "DJK TuS Hordel",
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   },
   {
@@ -60,11 +60,11 @@ externalu19 = [
     "Verein": "TSC Eintracht Dortmund",
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   }
 ]
@@ -108,11 +108,11 @@ externalu17 = [
     "Verein": "TSC Eintracht Dortmund",
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   },
   {
@@ -122,11 +122,11 @@ externalu17 = [
     "Verein": "BVB",
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   }
 ]
@@ -170,11 +170,11 @@ externalu16 = [
     "Verein": "FC Brünninghausen",
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   },
   {
@@ -184,11 +184,11 @@ externalu16 = [
     "Verein": "Hörder SC",
     "Berichte": [{
       "date": datetime.datetime(2022, 5, 17).strftime("%x"),
-      "bericht": "Alt Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Alt Bericht"
                  },
                  {
       "date": datetime.datetime(2023, 5, 17).strftime("%x"),
-      "bericht": "Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht Bericht"
+      "bericht": "Bericht"
     }]
   }
 ]
@@ -261,15 +261,15 @@ users = [
 
 @app.route("/")
 def start():
-  return render_template("home_lock.html", teams=TEAMS)
+  return render_template("home/home_lock.html", teams=TEAMS)
 
 @app.route("/home")
 def home():
   if "user" in session:
-    return render_template("home.html", teams=TEAMS, 
+    return render_template("home/home.html", teams=TEAMS, 
                            user=session["user"], rights=session["rights"])
   else:
-    return render_template('home_lock.html', error='Zugangsdaten falsch')
+    return render_template('home/home_lock.html', error='Zugangsdaten falsch')
     
 
 @app.route('/login', methods=['POST'])
@@ -283,13 +283,13 @@ def login():
       session["rights"] = user["rights"]
       return redirect(url_for('home'))
       
-  return render_template('home_lock.html', error='Zugangsdaten falsch')
+  return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
 @app.route("/logout")
 def logout():
   session.pop("user", None)
   session.pop("rights", None)
-  return render_template("home_lock.html", teams=TEAMS)
+  return render_template("home/home_lock.html", teams=TEAMS)
 
 
 @app.route("/<team_id>", methods=['GET', 'POST'])
@@ -301,10 +301,10 @@ def team(team_id):
         team["formation"] = request.form.to_dict()
       else:
         pass
-    return render_template("team.html", team=TEAMS[ids[team_id]], user=session["user"], 
+    return render_template("team/team.html", team=TEAMS[ids[team_id]], user=session["user"], 
                            teams=TEAMS, rights=session["rights"])
   else:
-    return render_template('home_lock.html', error='Zugangsdaten falsch')
+    return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
 @app.route("/<team_id>/player/<player_id>", methods=['GET', 'POST'])
 def player(team_id, player_id):
@@ -335,15 +335,15 @@ def player_helper(team_id, player_id, external) -> str:
         else:
             pass # unknown
     elif request.method == 'GET':
-      return render_template("player.html", team=team_infos, 
+      return render_template("player/player.html", team=team_infos, 
        player = player_infos, user=session["user"], 
        teams=TEAMS, external=external, rights=session["rights"])
 
-    return render_template("player.html", team=team_infos, 
+    return render_template("player/player.html", team=team_infos, 
                            player = player_infos, user=session["user"], 
                            teams=TEAMS, external=external, rights=session["rights"])
   else:
-    return render_template('home_lock.html', error='Zugangsdaten falsch')
+    return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
 
 @app.route("/api/teams")
@@ -351,7 +351,7 @@ def team_jobs():
   if "user" in session:
     return jsonify(TEAMS)
   else:
-    return render_template('home_lock.html', error='Zugangsdaten falsch')
+    return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
 
 if __name__ == "__main__":

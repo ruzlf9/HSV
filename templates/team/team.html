@@ -22,22 +22,22 @@
 
   <body>
     <div class="mb-4">
-      {% include 'nav.html' %}
+      {% include 'core/nav.html' %}
       <div class="mt-4">
         <h1 class="text-center"> 
           Teamseite - {{team["name"]}}
         </h1>
       </div>
       
-      {% include 'team_formation.html' %}
+      {% include 'team/team_formation.html' %}
       
       <div class="container text-center">
         <div class="row gx-5">
           <div class="col">
-            {% include 'team_player_list.html' %}
+            {% include 'team/team_player_list.html' %}
           </div>
           <div class="col">
-            {% include 'team_external_list.html' %}
+            {% include 'team/team_external_list.html' %}
           </div>
         </div>
       </div>

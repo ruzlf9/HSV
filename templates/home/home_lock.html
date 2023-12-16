@@ -13,29 +13,20 @@
         width:100%;
       }
     </style>
-    <title> HSV - Scouting</title>
+    <title> HSV - Scouting </title>
   </head>
 
   <body>
     <div class="mb-4">
-      {% include 'nav.html' %}
+      {% include 'core/nav_lock.html' %}
       <div class="mt-4">
         <h1 class="text-center"> 
-          HSV - Scouting 
+          HSV - Scouting
         </h1>
-      </div>
-
-      <div class="mt-4">
-        <h2 class="text-center"> Herzlich Willkommen {{ user.split("@")[0].split(".")[0].capitalize() }} ! </h2>
-      </div>
-
-      <div class="mt-4">
-        <h2 class="text-center"> Du hast Zugriff für folgende Mannschaften: </h2
-        <ul>
-          {% for team in rights %}
-            <h4 class="text-center"> <a class="link" href="/{{ team }}">{{ team }}</a> </h4>
-          {% endfor %}
-        </ul>
+        {% if error %}
+          <p style="color:red;"> {{ error }}</p>
+        {% endif %}
+        {% include 'home/login.html' %}
       </div>
     </div>
   </body>
