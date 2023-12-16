@@ -12,13 +12,13 @@ playersu19 = [
     "Vorname": "Ali",
     "Nachname": "Mem",
     "Rating": "A",
-    "Geburtsdatum": datetime.datetime(2005, 5, 17).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   },
@@ -26,13 +26,13 @@ playersu19 = [
     "Vorname": "Tobias",
     "Nachname": "Muster",
     "Rating": "B",
-    "Geburtsdatum": datetime.datetime(2004, 2, 17).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   }
@@ -42,28 +42,28 @@ externalu19 = [
   {
     "Vorname": "Stefan",
     "Nachname": "Neu",
-    "Geburtsdatum": datetime.datetime(2005, 2, 11).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Verein": "DJK TuS Hordel",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   },
   {
     "Vorname": "Paul",
     "Nachname": "Münch",
-    "Geburtsdatum": datetime.datetime(2004, 5, 7).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Verein": "TSC Eintracht Dortmund",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   }
@@ -74,13 +74,13 @@ playersu17 = [
     "Vorname": "Ali",
     "Nachname": "Mem",
     "Rating": "A",
-    "Geburtsdatum": datetime.datetime(2007, 5, 17).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   },
@@ -88,13 +88,13 @@ playersu17 = [
     "Vorname": "Tobias",
     "Nachname": "Muster",
     "Rating": "B",
-    "Geburtsdatum": datetime.datetime(2007, 2, 17).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   }
@@ -104,28 +104,28 @@ externalu17 = [
   {
     "Vorname": "Stefan",
     "Nachname": "Neu",
-    "Geburtsdatum": datetime.datetime(2007, 2, 11).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Verein": "TSC Eintracht Dortmund",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   },
   {
     "Vorname": "Paul",
     "Nachname": "Münch",
-    "Geburtsdatum": datetime.datetime(2007, 5, 7).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Verein": "BVB",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   }
@@ -136,13 +136,13 @@ playersu16 = [
     "Vorname": "Ali",
     "Nachname": "Mem",
     "Rating": "A",
-    "Geburtsdatum": datetime.datetime(2008, 5, 17).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   },
@@ -150,13 +150,13 @@ playersu16 = [
     "Vorname": "Tobias",
     "Nachname": "Muster",
     "Rating": "C",
-    "Geburtsdatum": datetime.datetime(2008, 2, 17).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   }
@@ -166,28 +166,28 @@ externalu16 = [
   {
     "Vorname": "Stefan",
     "Nachname": "Neu",
-    "Geburtsdatum": datetime.datetime(2008, 2, 11).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Verein": "FC Brünninghausen",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   },
   {
     "Vorname": "Paul",
     "Nachname": "Münch",
-    "Geburtsdatum": datetime.datetime(2008, 5, 7).strftime("%x"),
+    "Geburtsdatum": "11.04.2006",
     "Verein": "Hörder SC",
     "Berichte": [{
-      "date": datetime.datetime(2022, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": datetime.datetime(2023, 5, 17).strftime("%x"),
+      "date": "11.04.2006",
       "bericht": "Bericht"
     }]
   }
@@ -296,6 +296,25 @@ def logout():
 def team(team_id):
   if "user" in session and team_id in session["rights"]:
     if request.method == 'POST':
+      if request.form.get("add_player") == "save":
+        team = TEAMS[ids[team_id]]
+
+        gebdatum = request.form.get("gebdatum")
+
+        new_player = {'Vorname': request.form.get("vorname"), 
+                      'Nachname': request.form.get("nachname"), 
+                      'Rating': request.form.get("rating"), 
+                      'Geburtsdatum': gebdatum, 
+                      'Berichte': [{'date': datetime.datetime.today().strftime("%x"), 
+                                    'bericht': request.form.get("report")}
+                                   ]}
+        
+        team["players"].append(new_player)
+        
+      if request.form.get('new_player') == 'add':
+        return render_template("team/new_player.html", team=TEAMS[ids[team_id]], user=session["user"], 
+                               teams=TEAMS, rights=session["rights"])
+      
       if request.form.get('save_formation') == 'save':
         team = TEAMS[ids[team_id]]
         team["formation"] = request.form.to_dict()
@@ -329,7 +348,7 @@ def player_helper(team_id, player_id, external) -> str:
     if request.method == 'POST':
         if request.form.get('save_report') == 'save':
           player_infos["Berichte"].append({"date":
-                                           datetime.datetime.today().strftime("%x"),
+                                           str(datetime.datetime.today().day)+"."+str(datetime.datetime.today().month)+"."+str(datetime.datetime.today().year),
                                            "bericht":
                                            request.form.get('new_report_text')})
         else:
