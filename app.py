@@ -373,7 +373,9 @@ def team(team_id):
       # Save current formation
       if request.form.get('save_formation') == 'save':
         team = TEAMS[ids[team_id]]
+        print(team["formation"])
         team["formation"] = request.form.to_dict()
+        print(team["formation"])
       else:
         pass
     return render_template("team/team.html", team=TEAMS[ids[team_id]], user=session["user"], 
@@ -389,7 +391,7 @@ def player(team_id, player_id):
 @app.route("/<team_id>/external/<player_id>", methods=['GET', 'POST'])
 def external(team_id, player_id):
   return player_helper(team_id, player_id, external=True)
-
+  
 
 def player_helper(team_id, player_id, external) -> str:
   type = "external" if external else "players"
@@ -401,6 +403,7 @@ def player_helper(team_id, player_id, external) -> str:
                     player_id.split("_")[1]))[0][0]
     player_infos = team_infos[type][ind]
 
+    # new report
     if request.method == 'POST':
         if request.form.get('save_report') == 'save':
           player_infos["Berichte"].append({"date":
@@ -409,6 +412,7 @@ def player_helper(team_id, player_id, external) -> str:
                                            request.form.get('new_report_text')})
         else:
             pass # unknown
+          
     elif request.method == 'GET':
       return render_template("player/player.html", team=team_infos, 
        player = player_infos, user=session["user"], 
@@ -417,6 +421,53 @@ def player_helper(team_id, player_id, external) -> str:
     return render_template("player/player.html", team=team_infos, 
                            player = player_infos, user=session["user"], 
                            teams=TEAMS, external=external, rights=session["rights"])
+  else:
+    return render_template('home/home_lock.html', error='Zugangsdaten falsch')
+
+
+@app.route("/<team_id>/player/<player_id>/edit", methods=['GET', 'POST'])
+def player_edit(team_id, player_id):
+  return edit_player(team_id, player_id, external=False)
+
+
+@app.route("/<team_id>/external/<player_id>/edit", methods=['GET', 'POST'])
+def external_edit(team_id, player_id):
+  return edit_player(team_id, player_id, external=True)
+
+
+def edit_player(team_id, player_id, external):
+  type = "external" if external else "players"
+  if "user" in session and team_id in session["rights"]:
+    team_infos = TEAMS[ids[team_id]]
+    ind = np.where((np.array([d['Vorname'] for d in team_infos[type]]) == 
+                    player_id.split("_")[0]) & 
+                   (np.array([d['Nachname'] for d in team_infos[type]]) == 
+                    player_id.split("_")[1]))[0][0]
+    player_infos = team_infos[type][ind]
+
+    # save changes
+    if request.method == 'POST':
+      print("====================================")
+      print(request.form)
+      print("====================================")
+      if request.form.get('save_changes') == 'save':
+        player_infos["Vorname"] = request.form.get('vorname')
+        player_infos["Nachname"] = request.form.get('nachname')
+        player_infos["Geburtsdatum"] = request.form.get('gebdatum')
+        player_infos["Rating"] = request.form.get('rating')
+        return redirect(location="/"+team_id)
+      else:
+          pass # unknown
+
+    elif request.method == 'GET':
+      return render_template("player/player_edit.html", team=team_infos, 
+       player = player_infos, user=session["user"], 
+       teams=TEAMS, external=external, rights=session["rights"])
+
+    return render_template("player/player_edit.html", team=team_infos, 
+                           player = player_infos, user=session["user"], 
+                           teams=TEAMS, 
+                           external=external, rights=session["rights"])
   else:
     return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
