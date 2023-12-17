@@ -10,6 +10,20 @@
     {% endfor %}
   </div>
   <div>
+    {% if external %}
+      <a href="{{ "/"+team["id"]+"/external/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
+    <form method="post">
+      <button type="submit" class="btn btn-danger" name="delete_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
+        Delete
+      </button>
+    </form>
+    {% else %}
     <a href="{{ "/"+team["id"]+"/player/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
+    <form method="post">
+      <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
+        Delete
+      </button>
+    </form>
+    {% endif %}
   </div>
 </div>

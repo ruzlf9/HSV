@@ -314,6 +314,7 @@ def team(team_id):
         team["players"] = [p for p in team["players"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
+        return redirect(location="/"+team_id)
 
       # Delete external Player
       if request.form.get("delete_external_player") != None:
@@ -324,6 +325,7 @@ def team(team_id):
         team["external"] = [p for p in team["external"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
+        return redirect(location="/"+team_id)
         
       # Add own player
       if request.form.get("add_player") == "False":
@@ -403,15 +405,42 @@ def player_helper(team_id, player_id, external) -> str:
                     player_id.split("_")[1]))[0][0]
     player_infos = team_infos[type][ind]
 
-    # new report
     if request.method == 'POST':
-        if request.form.get('save_report') == 'save':
-          player_infos["Berichte"].append({"date":
-                                           str(datetime.datetime.today().day)+"."+str(datetime.datetime.today().month)+"."+str(datetime.datetime.today().year),
-                                           "bericht":
-                                           request.form.get('new_report_text')})
-        else:
-            pass # unknown
+      print("-------------------------")
+      print(request.form)
+      print("--------------------------")
+
+      # Delete player
+      if request.form.get("delete_player") != None:
+        team = TEAMS[ids[team_id]]
+        player = request.form.get("delete_player")
+        vorname = player.split("_")[0]
+        nachname = player.split("_")[1]
+        team["players"] = [p for p in team["players"] if 
+                           p.get('Vorname') != vorname and 
+                           p.get("Nachname") != nachname]
+        return redirect(location="/"+team_id)
+
+
+      # Delete external Player
+      if request.form.get("delete_external_player") != None:
+        team = TEAMS[ids[team_id]]
+        player = request.form.get("delete_external_player")
+        vorname = player.split("_")[0]
+        nachname = player.split("_")[1]
+        team["external"] = [p for p in team["external"] if 
+                           p.get('Vorname') != vorname and 
+                           p.get("Nachname") != nachname]
+        return redirect(location="/"+team_id)
+
+      # Save new report
+      if request.form.get('save_report') == 'save':
+        player_infos["Berichte"].append({"date":
+                                         str(datetime.datetime.today().day)+"."+str(datetime.datetime.today().month)+"."+str(datetime.datetime.today().year),
+                                         "bericht":
+                                         request.form.get('new_report_text')})
+      else:
+          pass # unknown
           
     elif request.method == 'GET':
       return render_template("player/player.html", team=team_infos, 

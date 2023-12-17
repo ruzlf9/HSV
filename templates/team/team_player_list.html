@@ -1,15 +1,17 @@
 <div class="mt-4">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <h2> 
     Eigene Spieler
-    <form method="post">
-      <button type="submit" class="btn btn-primary" name="new_player" value="own">Spieler hinzufügen</button>
-    </form>
   </h2>
+  <form method="post">
+    <button type="submit" class="btn btn-primary" name="new_player" value="own">Spieler hinzufügen</button>
+  </form>
 </div>
 <div class="mt-4">
   <table class="table table-hover">
     <thead>
       <tr>
+        <th scope="col"> </th>
         <th scope="col"> </th>
         <th scope="col"> </th>
         <th scope="col">Vorname</th>
@@ -21,9 +23,21 @@
       {% for player in team["players"] %}
         <tr>
           <td><form method="post">
-            <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>-</button>
+            <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
+              -
+            </button>
           </form></td>
-          <td><p><a class="link-opacity-100-hover" href="/{{team["name"]}}/player/{{ player["Vorname"] }}_{{ player["Nachname"] }}">Link</a></p></td>
+          <td
+            ><a href="{{ "/"+team["id"]+"/player/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">
+              <i style="font-size:24px" class="fa">&#xf040;</i>
+            </a>
+          </td>
+          <td>
+            <a href="/{{team["name"]}}/player/{{ player["Vorname"] }}_{{ player["Nachname"] }}" class="btn btn-primary">
+              <i style="font-size:24px" class="fa">&#xf15b;</i>
+            </a>
+          </td>
+          <!--<td><p><a class="link-opacity-100-hover" href="/{{team["name"]}}/player/{{ player["Vorname"] }}_{{ player["Nachname"] }}">Link</a></p></td>-->
           <td>{{ player["Vorname"] }}</td>
           <td>{{ player["Nachname"] }}</td>
           <td>{{ player["Geburtsdatum"] }}</td>
