@@ -302,19 +302,28 @@ def logout():
 def team(team_id):
   if "user" in session and team_id in session["rights"]:
     if request.method == 'POST':
+      print("===========================================")
       print(request.form)
-
-      # Delete Player
-      if request.form.get("delete_player") != "":
+      print("===========================================")
+      # Delete own Player
+      if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
-
         player = request.form.get("delete_player")
-        print(player)
         vorname = player.split("_")[0]
         nachname = player.split("_")[1]
-        print(vorname)
-        print(nachname)
-        print(team["players"])
+        team["players"] = [p for p in team["players"] if 
+                           p.get('Vorname') != vorname and 
+                           p.get("Nachname") != nachname]
+
+      # Delete external Player
+      if request.form.get("delete_external_player") != None:
+        team = TEAMS[ids[team_id]]
+        player = request.form.get("delete_external_player")
+        vorname = player.split("_")[0]
+        nachname = player.split("_")[1]
+        team["external"] = [p for p in team["external"] if 
+                           p.get('Vorname') != vorname and 
+                           p.get("Nachname") != nachname]
         
       # Add own player
       if request.form.get("add_player") == "False":
@@ -351,8 +360,10 @@ def team(team_id):
 
       # Go to page to add new player
       if request.form.get('new_player') == 'own':
-        return render_template("team/new_player.html", team=TEAMS[ids[team_id]], user=session["user"], 
-                               teams=TEAMS, rights=session["rights"],external=False)
+        return render_template("team/new_player.html", 
+                               team=TEAMS[ids[team_id]], user=session["user"], 
+                               teams=TEAMS,
+                               rights=session["rights"],external=False)
 
       # Go to page to add external player
       if request.form.get('new_player') == 'external':

@@ -11,6 +11,7 @@
     <thead>
       <tr>
         <th scope="col"> </th>
+        <th scope="col"> </th>
         <th scope="col">Vorname</th>
         <th scope="col">Nachname</th>
         <th scope="col">Geburtsdatum</th>
@@ -20,6 +21,9 @@
     <tbody>
       {% for player in team["external"] %}
         <tr>
+          <td><form method="post">
+            <button type="submit" class="btn btn-danger" name="delete_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>-</button>
+          </form></td>
           <td><p><a class="link-opacity-100-hover" href="/{{team["name"]}}/external/{{ player["Vorname"] }}_{{ player["Nachname"] }}">Link</a></p></td>
           <td>{{ player["Vorname"] }}</td>
           <td>{{ player["Nachname"] }}</td>
