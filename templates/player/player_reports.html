@@ -2,12 +2,27 @@
   <div class="mt-4">
     <h1> Berichte </h1>
   </div>
-  <div class="mt-4">
-    <h3> Aktueller Bericht ({{ player["Berichte"][-1]["date"] }}) </h3>
-      <div>
-        {{ player["Berichte"][-1]["bericht"] }}
-      </div>
-  </div>
+
+  <h3>
+    Bericht vom 
+  </h3>
+  <select class="form-control" id="which_report" name="which_report">
+    {% for report in player["Berichte"] %}
+      <option value="{{ report["bericht"] }}">{{ report["date"] }}</option>
+    {% endfor %}
+  </select>
+
+  <script type="text/javascript">
+      document.getElementById("which_report").addEventListener("change", function() {
+        var selectedValue = document.getElementById("which_report").value;
+        document.getElementById("selected_report_value").innerText = selectedValue;
+      });
+  </script>
+  
+  <h4>
+    <span id="selected_report_value"> {{ player["Berichte"][0]["bericht"] }} </span>
+  </h4>
+  
   <div class="mt-4">
     <h3> Neuer Bericht </h3>
   </div>

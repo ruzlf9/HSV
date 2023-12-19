@@ -9,8 +9,8 @@ app.secret_key = 'your_secret_key'
 
 playersu19 = [
   {
-    "Vorname": "Ali",
-    "Nachname": "Mem",
+    "Vorname": "Test",
+    "Nachname": "Spieler",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
     "Berichte": [{
@@ -23,8 +23,8 @@ playersu19 = [
     }]
   },
   {
-    "Vorname": "Tobias",
-    "Nachname": "Muster",
+    "Vorname": "Spieler",
+    "Nachname": "Zwei",
     "Geburtsdatum": "11.04.2006",
     "Rating": "B",
     "Berichte": [{
@@ -40,8 +40,8 @@ playersu19 = [
 
 externalu19 = [
   {
-    "Vorname": "Stefan",
-    "Nachname": "Neu",
+    "Vorname": "Externer",
+    "Nachname": "Spieler",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -55,9 +55,9 @@ externalu19 = [
     }]
   },
   {
-    "Vorname": "Stefan",
-    "Nachname": "Neu",
-    "Verein": "DJK TuS Hordel",
+    "Vorname": "Anderer",
+    "Nachname": "Externer",
+    "Verein": "TSC Eintracht",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
     "Berichte": [{
@@ -73,8 +73,8 @@ externalu19 = [
 
 playersu17 = [
   {
-    "Vorname": "Ali",
-    "Nachname": "Mem",
+    "Vorname": "Test",
+    "Nachname": "Spieler",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
     "Berichte": [{
@@ -87,8 +87,8 @@ playersu17 = [
     }]
   },
   {
-    "Vorname": "Tobias",
-    "Nachname": "Muster",
+    "Vorname": "Spieler",
+    "Nachname": "Zwei",
     "Geburtsdatum": "11.04.2006",
     "Rating": "B",
     "Berichte": [{
@@ -104,8 +104,8 @@ playersu17 = [
 
 externalu17 = [
   {
-    "Vorname": "Stefan",
-    "Nachname": "Neu",
+    "Vorname": "Externer",
+    "Nachname": "Spieler",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -119,8 +119,8 @@ externalu17 = [
     }]
   },
   {
-    "Vorname": "Stefan",
-    "Nachname": "Neu",
+    "Vorname": "Anderer",
+    "Nachname": "Externer",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -137,8 +137,8 @@ externalu17 = [
 
 playersu16 = [
   {
-    "Vorname": "Ali",
-    "Nachname": "Mem",
+    "Vorname": "Test",
+    "Nachname": "Spieler",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
     "Berichte": [{
@@ -146,13 +146,13 @@ playersu16 = [
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": "11.04.2006",
+      "date": "11.04.2005",
       "bericht": "Bericht"
     }]
   },
   {
-    "Vorname": "Tobias",
-    "Nachname": "Muster",
+    "Vorname": "Spieler",
+    "Nachname": "Zwei",
     "Geburtsdatum": "11.04.2006",
     "Rating": "C",
     "Berichte": [{
@@ -168,8 +168,8 @@ playersu16 = [
 
 externalu16 = [
   {
-    "Vorname": "Stefan",
-    "Nachname": "Neu",
+    "Vorname": "Externer",
+    "Nachname": "Spieler",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -183,8 +183,8 @@ externalu16 = [
     }]
   },
   {
-    "Vorname": "Stefan",
-    "Nachname": "Neu",
+    "Vorname": "Anderer",
+    "Nachname": "Externer",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -203,13 +203,12 @@ TEAMS = [
   {
     "id": "U19",
     "name": "U19",
-    "coaches" : ["Marvin","Justus"],
     "players": playersu19,
-    "formation": {'save_formation': 'save', 'LS1': 'Ali_Mem', 'ST1': '', 'RS1': '',
-                  'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Ali_Mem',
+    "formation": {'save_formation': 'save', 'LS1': 'Test_Spieler', 'ST1': '', 'RS1': '',
+                  'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Spieler_Zwei',
                   'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
                   'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
-                  'RIV1': '', 'RV1': 'Tobias_Muster', 'LV2': '', 'LIV2': '',
+                  'RIV1': '', 'RV1': '', 'LV2': '', 'LIV2': '',
                   'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
                   'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
                   'TW3': ''},
@@ -218,13 +217,12 @@ TEAMS = [
   {
     "id": "U17",
     "name": "U17",
-    "coaches" : ["Holger","Rudi"],
     "players": playersu17,
     "formation": {'save_formation': 'save', 'LS1': '', 'ST1': '', 'RS1': '',
-      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Ali_Mem',
+      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Spieler_Zwei',
       'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
       'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
-      'RIV1': '', 'RV1': 'Tobias_Muster', 'LV2': '', 'LIV2': '',
+      'RIV1': '', 'RV1': 'Test_Spieler', 'LV2': '', 'LIV2': '',
       'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
       'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
       'TW3': ''},
@@ -233,13 +231,12 @@ TEAMS = [
   {
     "id": "U16",
     "name": "U16",
-    "coaches" : ["Lukas","Niklas"],
     "players": playersu16,
     "formation": {'save_formation': 'save', 'LS1': '', 'ST1': '', 'RS1': '',
-      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Ali_Mem',
+      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Spieler_Zwei',
       'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
       'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
-      'RIV1': '', 'RV1': 'Tobias_Muster', 'LV2': '', 'LIV2': '',
+      'RIV1': '', 'RV1': 'Test_Spieler', 'LV2': '', 'LIV2': '',
       'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
       'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
       'TW3': ''},
@@ -254,6 +251,11 @@ users = [
   "pw": "rudi",
   "rights": ["U19","U17","U16"]
 },
+  {
+    "email": "dominik.starke@hombruchersv.de",
+    "pw": "HSV",
+    "rights": ["U19","U17","U16"]
+  },
   {
   "email": "U17@U17.com",
   "pw": "U17",
@@ -435,8 +437,10 @@ def player_helper(team_id, player_id, external) -> str:
 
       # Save new report
       if request.form.get('save_report') == 'save':
-        player_infos["Berichte"].append({"date":
-                                         str(datetime.datetime.today().day)+"."+str(datetime.datetime.today().month)+"."+str(datetime.datetime.today().year),
+        player_infos["Berichte"].insert(0,
+                                        {"date": str(datetime.datetime.today().day)+
+                                         "."+str(datetime.datetime.today().month)+
+                                         "."+str(datetime.datetime.today().year),
                                          "bericht":
                                          request.form.get('new_report_text')})
       else:
