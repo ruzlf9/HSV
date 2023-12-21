@@ -73,33 +73,350 @@ externalu19 = [
 
 playersu17 = [
   {
-    "Vorname": "Test",
-    "Nachname": "Spieler",
-    "Geburtsdatum": "11.04.2006",
-    "Rating": "A",
+    "Vorname": "Marlon",
+    "Nachname": "Randelhoff",
+    "Position": "TW",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
     "Berichte": [{
-      "date": "11.04.2006",
+      "date": "11.04.2022",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": "11.04.2006",
+      "date": "11.04.2023",
       "bericht": "Bericht"
     }]
   },
   {
-    "Vorname": "Spieler",
-    "Nachname": "Zwei",
-    "Geburtsdatum": "11.04.2006",
+    "Vorname": "Joshua",
+    "Nachname": "Sartorius",
+    "Position": "TW",
+    "Geburtsdatum": "XX.XX.2007",
     "Rating": "B",
     "Berichte": [{
-      "date": "11.04.2006",
+      "date": "11.04.2022",
       "bericht": "Alt Bericht"
                  },
                  {
-      "date": "11.04.2006",
+      "date": "11.04.2023",
       "bericht": "Bericht"
     }]
-  }
+  },
+  {
+    "Vorname": "Mattis",
+    "Nachname": "Linnewerth",
+    "Position": "LV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Julian",
+    "Nachname": "Schneider",
+    "Position": "LV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Batin",
+    "Nachname": "Gökalb",
+    "Position": "RV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Bakihan",
+    "Nachname": "Ayhan",
+    "Position": "RV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Fabio",
+    "Nachname": "Doliwa",
+    "Position": "RV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Noah",
+    "Nachname": "Fell",
+    "Position": "IV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "A",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Luis",
+    "Nachname": "Majdanac",
+    "Position": "IV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "A",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Leandro",
+    "Nachname": "Tavares",
+    "Position": "IV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Jan-Luca",
+    "Nachname": "Kirchner",
+    "Position": "IV",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Nils",
+    "Nachname": "Kleine",
+    "Position": "ZM",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Leon",
+    "Nachname": "von Hatzfeld",
+    "Position": "ZM",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Jannik",
+    "Nachname": "Leppla",
+    "Position": "ZM",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Kerem",
+    "Nachname": "Aksu",
+    "Position": "ZM",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Simon",
+    "Nachname": "Strothmüller",
+    "Position": "ZM",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Paul",
+    "Nachname": "Stehger",
+    "Position": "ZM",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Japhet",
+    "Nachname": "Nsimba",
+    "Position": "ST",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Elton",
+    "Nachname": "Kadrija",
+    "Position": "ST",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Jan Luca",
+    "Nachname": "Lamay",
+    "Position": "ST",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "A",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Kilian",
+    "Nachname": "Zierhorst",
+    "Position": "ST",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "A",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Joshua",
+    "Nachname": "Poll",
+    "Position": "ST",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "C",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
+  {
+    "Vorname": "Dustin",
+    "Nachname": "Jurkiewicz",
+    "Position": "ST",
+    "Geburtsdatum": "XX.XX.2007",
+    "Rating": "B",
+    "Berichte": [{
+      "date": "11.04.2022",
+      "bericht": "Alt Bericht"
+                 },
+                 {
+      "date": "11.04.2023",
+      "bericht": "Bericht"
+    }]
+  },
 ]
 
 externalu17 = [
@@ -218,14 +535,7 @@ TEAMS = [
     "id": "U17",
     "name": "U17",
     "players": playersu17,
-    "formation": {'save_formation': 'save', 'LS1': '', 'ST1': '', 'RS1': '',
-      'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Spieler_Zwei',
-      'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
-      'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
-      'RIV1': '', 'RV1': 'Test_Spieler', 'LV2': '', 'LIV2': '',
-      'ZIV2': '', 'RIV2': '', 'RV2': '', 'LV3': '', 'LIV3': '',
-      'ZIV3': '', 'RIV3': '', 'RV3': '', 'TW1': '', 'TW2': '',
-      'TW3': ''},
+    "formation": {'save_formation': 'save', 'LS1': 'Dustin_Jurkiewicz', 'ST1': 'Jan Luca_Lamay', 'RS1': 'Kilian_Zierhorst', 'LS2': 'Japhet_Nsimba', 'ST2': 'Joshua_Poll', 'RS2': 'Elton_Kadrija', 'LS3': '', 'ST3': '', 'RS3': '', 'ZML1': 'Paul_Stehger', 'ZMR1': 'Simon_Strothmüller', 'ZML2': 'Jannik_Leppla', 'ZMR2': 'Leon_von Hatzfeld', 'ZML3': 'Kerem_Aksu', 'ZMR3': 'Nils_Kleine', 'LV1': 'Julian_Schneider', 'LIV1': 'Luis_Majdanac', 'ZIV1': 'Noah_Fell', 'RIV1': 'Leandro_Tavares', 'RV1': 'Batin_Gökalb', 'LV2': 'Mattis_Linnewerth', 'LIV2': 'Jan-Luca_Kirchner', 'ZIV2': '', 'RIV2': '', 'RV2': 'Bakihan_Ayhan', 'LV3': '', 'LIV3': '', 'ZIV3': '', 'RIV3': '', 'RV3': 'Fabio_Doliwa', 'TW1': 'Joshua_Sartorius', 'TW2': 'Marlon_Randelhoff', 'TW3': ''},
     "external":externalu17
   },
   {

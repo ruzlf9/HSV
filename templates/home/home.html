@@ -21,7 +21,9 @@
       {% include 'core/nav.html' %}
       <div class="mt-4">
         <h1 class="text-center"> 
-          HSV - Scouting 
+          <img src="/static/HSVLogo.png" width="200" height="200">
+          HSV - Scouting
+          <img src="/static/HSVLogo.png" width="200" height="200">
         </h1>
       </div>
 
@@ -30,11 +32,13 @@
       </div>
 
       <div class="mt-4">
-        <h2 class="text-center"> Du hast Zugriff für folgende Mannschaften: </h2
+        <h3 class="text-center"> Du hast Zugriff für folgende Mannschaften: </h3>
         <ul>
+          <div class="link-box">
           {% for team in rights %}
             <h4 class="text-center"> <a class="link" href="/{{ team }}">{{ team }}</a> </h4>
           {% endfor %}
+          </div>
         </ul>
       </div>
     </div>
