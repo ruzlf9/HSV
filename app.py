@@ -339,7 +339,9 @@ def team(team_id):
                       'Nachname': request.form.get("nachname"), 
                       'Geburtsdatum': gebdatum, 
                       'Rating': request.form.get("rating"), 
-                      'Berichte': [{'date': datetime.datetime.today().strftime("%x"), 
+                      'Berichte': [{'date': str(datetime.datetime.today().day)+
+                                     "."+str(datetime.datetime.today().month)+
+                                     "."+str(datetime.datetime.today().year), 
                                     'bericht': request.form.get("report")}
                                    ]}
         
@@ -356,7 +358,9 @@ def team(team_id):
                       "Verein": request.form.get("verein"),
                       'Geburtsdatum': gebdatum, 
                       'Rating': request.form.get("rating"), 
-                      'Berichte': [{'date': datetime.datetime.today().strftime("%x"), 
+                      'Berichte': [{'date': str(datetime.datetime.today().day)+
+                                     "."+str(datetime.datetime.today().month)+
+                                     "."+str(datetime.datetime.today().year), 
                                     'bericht': request.form.get("report")}
                                    ]}
   
@@ -385,19 +389,12 @@ def team(team_id):
     team = TEAMS[ids[team_id]]
     formation = team["formation"]
     players = team["players"]
-    print("**************************")
-    print(players)
-    print("--------")
     names = [p.split("_") for p in formation.values()]
-    print(names)
-    print("--------")
     colors = ["#ffffff" if len(n)==1 else 
               next((rating_mapping(player["Rating"]) for player in players if 
                     player["Vorname"] == n[0] 
                     and player["Nachname"] == n[1]), None)
               for n in names][1:]
-    print(colors)
-    print("**************************")
     return render_template("team/team.html", team=TEAMS[ids[team_id]], user=session["user"], 
                            teams=TEAMS, rights=session["rights"], 
                            colors_formation=colors)
@@ -504,7 +501,9 @@ def edit_player(team_id, player_id, external):
         player_infos["Vorname"] = request.form.get('vorname')
         player_infos["Nachname"] = request.form.get('nachname')
         player_infos["Geburtsdatum"] = request.form.get('gebdatum')
-        player_infos["Rating"] = request.form.get('rating')
+        player_infos["Rating"] = request.form.get('rating').strip()
+        if type == "external":
+          player_infos["Verein"] = request.form.get('verein')
         return redirect(location="/"+team_id)
       else:
           pass # unknown
@@ -530,7 +529,7 @@ def rating_mapping(rating):
     "D": "#B1671E",
     "E": "#B12B1D"
   }
-  return rating_colors.get(rating, "default_color")
+  return rating_colors.get(rating.strip(), "default_color")
   
 
 

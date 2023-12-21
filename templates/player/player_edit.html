@@ -47,8 +47,14 @@
               </div>
 
               <div class="form-group">
-                <label for="rating">Rating (A-E)</label>
-                <textarea class="form-control text-center" id="rating" rows="1" name="rating"> {{ player.get("Rating") }} </textarea>
+                <label for="rating">Rating</label>
+                <select class="form-control" id="rating" name="rating" >
+                  <option value="A">A (sehr gut)</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E (sehr schlecht)</option>
+                </select>
               </div>
 
               <br>
