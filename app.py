@@ -382,8 +382,25 @@ def team(team_id):
         print(team["formation"])
       else:
         pass
+    team = TEAMS[ids[team_id]]
+    formation = team["formation"]
+    players = team["players"]
+    print("**************************")
+    print(players)
+    print("--------")
+    names = [p.split("_") for p in formation.values()]
+    print(names)
+    print("--------")
+    colors = ["#ffffff" if len(n)==1 else 
+              next((rating_mapping(player["Rating"]) for player in players if 
+                    player["Vorname"] == n[0] 
+                    and player["Nachname"] == n[1]), None)
+              for n in names][1:]
+    print(colors)
+    print("**************************")
     return render_template("team/team.html", team=TEAMS[ids[team_id]], user=session["user"], 
-                           teams=TEAMS, rights=session["rights"])
+                           teams=TEAMS, rights=session["rights"], 
+                           colors_formation=colors)
   else:
     return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
@@ -503,6 +520,18 @@ def edit_player(team_id, player_id, external):
                            external=external, rights=session["rights"])
   else:
     return render_template('home/home_lock.html', error='Zugangsdaten falsch')
+
+
+def rating_mapping(rating):
+  rating_colors = {
+    "A": "#16B13D",
+    "B": "#7BB11B",
+    "C": "#B19719",
+    "D": "#B1671E",
+    "E": "#B12B1D"
+  }
+  return rating_colors.get(rating, "default_color")
+  
 
 
 @app.route("/api/teams")
