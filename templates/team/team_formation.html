@@ -34,9 +34,20 @@
         
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[0] }}">
           <select class="form-control" id="LS1" name="LS1">
+            <option value="{{ team["formation"]["LS1"].split("_")[0]+"_"+team["formation"]["LS1"].split("_")[1] if team["formation"]["LS1"] != "" else ""}}" class="text-center" selected>{{ team["formation"]["LS1"].split("_")[0][0]+"."+ team["formation"]["LS1"].split("_")[1] if team["formation"]["LS1"] != "" else "----"}}</option>
             <option value="" class="text-center">----</option>
-            {% for player in team["players"] %}
-              <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LS1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
+
+            {% for p in players %}
+              {% set ns = namespace(found=false) %}
+              {% for pos in team["formation"] %}
+                {% if team["formation"][pos] == (p["Vorname"]+"_"+p["Nachname"]) %}
+                {%- set ns.found = true %}
+                {% endif %}
+              {% endfor %}
+
+              {% if not ns.found %}
+            <option value="{{ p["Vorname"]+"_"+p["Nachname"] }}">{{ p["Vorname"][0]+". "+p["Nachname"] }}</option>
+              {% endif %}
             {% endfor %}
           </select>
         </div>
@@ -44,9 +55,20 @@
         
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[1] }}">
           <select class="form-control" id="ST1" name="ST1">
-            <option value="">----</option>
-            {% for player in team["players"] %}
-              <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ST1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
+            <option value="{{ team["formation"]["ST1"].split("_")[0]+"_"+team["formation"]["ST1"].split("_")[1] if team["formation"]["ST1"] != "" else ""}}" class="text-center" selected>{{ team["formation"]["ST1"].split("_")[0][0]+"."+ team["formation"]["ST1"].split("_")[1] if team["formation"]["ST1"] != "" else "----"}}</option>
+            <option value="" class="text-center">----</option>
+
+            {% for p in players %}
+              {% set ns = namespace(found=false) %}
+              {% for pos in team["formation"] %}
+                {% if team["formation"][pos] == (p["Vorname"]+"_"+p["Nachname"]) %}
+                {%- set ns.found = true %}
+                {% endif %}
+              {% endfor %}
+
+              {% if not ns.found %}
+            <option value="{{ p["Vorname"]+"_"+p["Nachname"] }}">{{ p["Vorname"][0]+". "+p["Nachname"] }}</option>
+              {% endif %}
             {% endfor %}
           </select>
         </div>
@@ -56,7 +78,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[2] }}">
           <select class="form-control" id="RS1" name="RS1">
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RS1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -73,7 +95,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[3] }}">
           <select class="form-control" id="LS2" name="LS2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LS2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -84,7 +106,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[4] }}">
           <select class="form-control" id="ST2" name="ST2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}"
                 {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ST2"] %} 
                 selected 
@@ -100,7 +122,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[5] }}">
           <select class="form-control" id="RS2" name="RS2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RS2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -117,7 +139,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[6] }}">
           <select class="form-control" id="LS3" name="LS3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LS3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -128,7 +150,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[7] }}">
           <select class="form-control" id="ST3" name="ST3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ST3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -139,7 +161,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[8] }}">
           <select class="form-control" id="RS3" name="RS3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RS3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -160,7 +182,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[9] }}">
           <select class="form-control" id="ZML1" name="ZML1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZML1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -171,7 +193,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[10] }}">
           <select class="form-control" id="ZMR1" name="ZMR1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZMR1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -188,7 +210,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[11] }}">
           <select class="form-control" id="ZML2" name="ZML2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZML2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -199,7 +221,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[12] }}">
           <select class="form-control" id="ZMR2" name="ZMR2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZMR2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -215,7 +237,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[13] }}">
           <select class="form-control" id="ZML3" name="ZML3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZML3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -226,7 +248,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[14] }}">
           <select class="form-control" id="ZMR3" name="ZMR3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZMR3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -244,30 +266,34 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[15] }}">
           <select class="form-control" id="LV1" name="LV1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LV1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
-        </div><div class="col col-lg-2" style="border:2px solid {{ colors_formation[16] }}">
+        </div>
+        
+        <div class="col col-lg-2" style="border:2px solid {{ colors_formation[16] }}">
           <select class="form-control" id="LIV1" name="LIV1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LIV1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
         </div>
+        
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[17] }}">
           <select class="form-control" id="ZIV1" name="ZIV1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZIV1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
         </div>
+        
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[18] }}">
           <select class="form-control" id="RIV1" name="RIV1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RIV1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -275,7 +301,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[19] }}">
           <select class="form-control" id="RV1" name="RV1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RV1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -286,14 +312,16 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[20] }}">
           <select class="form-control" id="LV2" name="LV2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LV2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
-        </div><div class="col col-lg-2" style="border:2px solid {{ colors_formation[21] }}">
+        </div>
+        
+        <div class="col col-lg-2" style="border:2px solid {{ colors_formation[21] }}">
           <select class="form-control" id="LIV2" name="LIV2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LIV2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -301,7 +329,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[22] }}">
           <select class="form-control" id="ZIV2" name="ZIV2">
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZIV2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -309,7 +337,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[23] }}">
           <select class="form-control" id="RIV2" name="RIV2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RIV2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -317,7 +345,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[24] }}">
           <select class="form-control" id="RV2" name="RV2" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RV2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -328,14 +356,14 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[25] }}">
           <select class="form-control" id="LV3" name="LV3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LV3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
         </div><div class="col col-lg-2" style="border:2px solid {{ colors_formation[26] }}">
           <select class="form-control" id="LIV3" name="LIV3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["LIV3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -343,7 +371,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[27] }}">
           <select class="form-control" id="ZIV3" name="ZIV3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["ZIV3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -351,7 +379,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[28] }}">
           <select class="form-control" id="RIV3" name="RIV3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RIV3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -359,7 +387,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[29] }}">
           <select class="form-control" id="RV3" name="RV3" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["RV3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -378,7 +406,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[30] }}">
           <select class="form-control" id="TW1" name="TW1" >
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["TW1"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -395,7 +423,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[31] }}">
           <select class="form-control" id="TW2" name="TW2">
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["TW2"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
@@ -411,7 +439,7 @@
         <div class="col col-lg-2" style="border:2px solid {{ colors_formation[32] }}">
           <select class="form-control" id="TW3" name="TW3">
             <option value="">----</option>
-            {% for player in team["players"] %}
+            {% for player in players %}
               <option value="{{ player["Vorname"]+"_"+player["Nachname"] }}" {% if player["Vorname"]+"_"+player["Nachname"] == team["formation"]["TW3"] %} selected {% endif %}>{{ player["Vorname"][0]+". "+player["Nachname"] }}</option>
             {% endfor %}
           </select>
