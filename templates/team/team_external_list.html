@@ -2,16 +2,14 @@
   <h2> 
     Externe Spieler
   </h2>
+  
   <form method="post">
     <button type="submit" class="btn btn-primary" name="new_player" value="external">Spieler hinzufügen</button>
   </form>
-</div>
-<div class="mt-4">
+  
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col"> </th>
-        <th scope="col"> </th>
         <th scope="col"> </th>
         <th scope="col">Vorname</th>
         <th scope="col">Nachname</th>
@@ -19,25 +17,101 @@
         <th scope="col">Verein </th>
         <th scope="col">Rating </th>
       </tr>
-    </thead>
-    <tbody>
-      {% for player in team["external"] %}
-        <tr>
-          <td><form method="post">
-            <button type="submit" class="btn btn-danger" name="delete_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
-              -
+      
+      <tr>
+        <th scope="col"> </th>
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_vorn.inc">
+              ▲
             </button>
-          </form></td>
-          <td
-            ><a href="{{ "/"+team["id"]+"/external/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">
-              <i style="font-size:24px" class="fa">&#xf040;</i>
-            </a>
+          </form>
+          
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_vorn.dec">
+              ▼
+            </button>
+          </form>
+        </th>
+
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_nachn.inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_nachn.dec">
+              ▼
+            </button>
+          </form>
+        </th>
+
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_gebdat.inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_gebdat.dec">
+              ▼
+            </button>
+          </form>
+        </th>
+
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_team.inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_team.dec">
+              ▼
+            </button>
+          </form>
+        </th>
+
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_rating.inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="ext_rating.dec">
+              ▼
+            </button>
+          </form>
+        </th>
+      </tr>
+    </thead>
+
+    
+    <tbody>
+      {% for player in externals %}
+        <tr>
+          <td style="display: flex; align-items: center;">
+            <form method="post" style="margin-right: 4px;">
+              <button type="submit" class="btn btn-danger" name="delete_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}">
+                <i style="font-size:24px" class="fa">&#xf1f8;</i>
+              </button>
+            </form>
+      
+            <form action="{{ '/'+team['id']+'/external/'+player['Vorname']+'_'+player['Nachname']+'/edit' }}" method="get" style="margin-right: 4px;">
+              <button type="submit" class="btn btn-primary">
+                <i style="font-size:24px" class="fa">&#xf044;</i>
+              </button>
+            </form>
+      
+            <form action="/{{team['name']}}/external/{{ player['Vorname'] }}_{{ player['Nachname'] }}" method="get">
+              <button type="submit" class="btn btn-primary">
+                <i style="font-size:24px" class="fa">&#xf06e;</i>
+              </button>
+            </form>
           </td>
-          <td>
-            <a href="/{{team["name"]}}/external/{{ player["Vorname"] }}_{{ player["Nachname"] }}" class="btn btn-primary">
-              <i style="font-size:24px" class="fa">&#xf15b;</i>
-            </a>
-          </td>
+          
           <td>{{ player["Vorname"] }}</td>
           <td>{{ player["Nachname"] }}</td>
           <td>{{ player["Geburtsdatum"] }}</td>

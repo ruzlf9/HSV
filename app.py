@@ -622,44 +622,61 @@ def team(team_id):
       if request.form.get("sort_players") != None:
         team = TEAMS[ids[team_id]]
         formation = team["formation"]
-        players = team["players"]
+        type, action = request.form.get("sort_players").split("_")
+
+        type = "players" if type == "own" else "external"
+
+        print(type, action)
+        
+        players = team[type] 
         names = [p.split("_") for p in formation.values()]
         colors = ["#ffffff" if len(n)==1 else 
-                  next((rating_mapping(player["Rating"]) for player in players if 
+                  next((rating_mapping(player["Rating"]) for player in team["players"] if 
                         player["Vorname"] == n[0] 
                         and player["Nachname"] == n[1]), None)
                   for n in names][1:]
-        if request.form.get("sort_players") == "own_vorn_inc":
+        sorted_players = players
+        
+        if action == "vorn.inc":
+          print(players)
           sorted_players = sorted(players, key=lambda x: x['Vorname'].upper())
-        if request.form.get("sort_players") == "own_vorn_dec":
+          print(sorted_players)
+        if action == "vorn.dec":
           sorted_players = sorted(players, key=lambda x: x['Vorname'].upper(), reverse=True)
           
-        if request.form.get("sort_players") == "own_nachn_inc":
+        if action == "nachn.inc":
           sorted_players = sorted(players, key=lambda x: x['Nachname'].upper())
-        if request.form.get("sort_players") == "own_nachn_dec":
+        if action == "nachn.dec":
           sorted_players = sorted(players, key=lambda x: x['Nachname'].upper(), reverse=True)
           
-        if request.form.get("sort_players") == "own_gebdat_inc":
+        if action == "gebdat.inc":
           sorted_players = sorted(players, key=lambda x: 
                                   (int(x['Geburtsdatum'].split(".")[2]), 
                                   int(x['Geburtsdatum'].split(".")[1]),
                                   int(x['Geburtsdatum'].split(".")[0])))
-        if request.form.get("sort_players") == "own_gebdat_dec":
+        if action == "gebdat.dec":
           sorted_players = sorted(players, key=lambda x: 
             (int(x['Geburtsdatum'].split(".")[2]), 
             int(x['Geburtsdatum'].split(".")[1]),
             int(x['Geburtsdatum'].split(".")[0])), reverse=True)
           
-        if request.form.get("sort_players") == "own_rating_inc":
+        if action == "rating.inc":
           sorted_players = sorted(players, key=lambda x: x['Rating'])
-        if request.form.get("sort_players") == "own_rating_dec":
+        if action == "rating.dec":
           sorted_players = sorted(players, key=lambda x: x['Rating'], reverse=True)
 
-        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+        if type == "players":
+          return render_template("team/team.html", team=TEAMS[ids[team_id]], 
            user=session["user"], 
            teams=TEAMS, rights=session["rights"], 
-           colors_formation=colors, players=sorted_players)
-        
+           colors_formation=colors, players=sorted_players, externals=team["external"])
+        else:
+          return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+             user=session["user"], 
+             teams=TEAMS, rights=session["rights"], 
+             colors_formation=colors, players=team["players"], externals=sorted_players)
+
+      
       # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
@@ -748,10 +765,12 @@ def team(team_id):
                     player["Vorname"] == n[0] 
                     and player["Nachname"] == n[1]), None)
               for n in names][1:]
-    return render_template("team/team.html", team=TEAMS[ids[team_id]], user=session["user"], 
+    return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+                           user=session["user"], 
                            teams=TEAMS, rights=session["rights"], 
                            colors_formation=colors, 
-                           players=sorted(players, key=lambda x: x['Nachname'].upper()))
+                           players=sorted(players, key=lambda x: x['Nachname'].upper()),
+                           externals = sorted(team["external"], key=lambda x: x['Nachname'].upper()))
   else:
     return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
