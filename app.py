@@ -76,7 +76,7 @@ playersu17 = [
     "Vorname": "Marlon",
     "Nachname": "Randelhoff",
     "Position": "TW",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "01.01.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -91,7 +91,7 @@ playersu17 = [
     "Vorname": "Joshua",
     "Nachname": "Sartorius",
     "Position": "TW",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "02.07.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -106,7 +106,7 @@ playersu17 = [
     "Vorname": "Mattis",
     "Nachname": "Linnewerth",
     "Position": "LV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "06.12.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -121,7 +121,7 @@ playersu17 = [
     "Vorname": "Julian",
     "Nachname": "Schneider",
     "Position": "LV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "11.03.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -136,7 +136,7 @@ playersu17 = [
     "Vorname": "Batin",
     "Nachname": "Gökalb",
     "Position": "RV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "17.12.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -151,7 +151,7 @@ playersu17 = [
     "Vorname": "Bakihan",
     "Nachname": "Ayhan",
     "Position": "RV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "01.07.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -166,7 +166,7 @@ playersu17 = [
     "Vorname": "Fabio",
     "Nachname": "Doliwa",
     "Position": "RV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "08.11.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -181,7 +181,7 @@ playersu17 = [
     "Vorname": "Noah",
     "Nachname": "Fell",
     "Position": "IV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "11.11.2007",
     "Rating": "A",
     "Berichte": [{
       "date": "11.04.2022",
@@ -196,7 +196,7 @@ playersu17 = [
     "Vorname": "Luis",
     "Nachname": "Majdanac",
     "Position": "IV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "05.05.2007",
     "Rating": "A",
     "Berichte": [{
       "date": "11.04.2022",
@@ -211,7 +211,7 @@ playersu17 = [
     "Vorname": "Leandro",
     "Nachname": "Tavares",
     "Position": "IV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "06.02.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -226,7 +226,7 @@ playersu17 = [
     "Vorname": "Jan-Luca",
     "Nachname": "Kirchner",
     "Position": "IV",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "12.11.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -241,7 +241,7 @@ playersu17 = [
     "Vorname": "Nils",
     "Nachname": "Kleine",
     "Position": "ZM",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "05.12.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -256,7 +256,7 @@ playersu17 = [
     "Vorname": "Leon",
     "Nachname": "von Hatzfeld",
     "Position": "ZM",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "12.05.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -271,7 +271,7 @@ playersu17 = [
     "Vorname": "Jannik",
     "Nachname": "Leppla",
     "Position": "ZM",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "14.01.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -286,7 +286,7 @@ playersu17 = [
     "Vorname": "Kerem",
     "Nachname": "Aksu",
     "Position": "ZM",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "19.02.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -301,7 +301,7 @@ playersu17 = [
     "Vorname": "Simon",
     "Nachname": "Strothmüller",
     "Position": "ZM",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "22.01.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -316,7 +316,7 @@ playersu17 = [
     "Vorname": "Paul",
     "Nachname": "Stehger",
     "Position": "ZM",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "29.04.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -331,7 +331,7 @@ playersu17 = [
     "Vorname": "Japhet",
     "Nachname": "Nsimba",
     "Position": "ST",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "14.11.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -346,7 +346,7 @@ playersu17 = [
     "Vorname": "Elton",
     "Nachname": "Kadrija",
     "Position": "ST",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "12.12.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -361,7 +361,7 @@ playersu17 = [
     "Vorname": "Jan Luca",
     "Nachname": "Lamay",
     "Position": "ST",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "05.09.2007",
     "Rating": "A",
     "Berichte": [{
       "date": "11.04.2022",
@@ -376,7 +376,7 @@ playersu17 = [
     "Vorname": "Kilian",
     "Nachname": "Zierhorst",
     "Position": "ST",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "09.09.2007",
     "Rating": "A",
     "Berichte": [{
       "date": "11.04.2022",
@@ -391,7 +391,7 @@ playersu17 = [
     "Vorname": "Joshua",
     "Nachname": "Poll",
     "Position": "ST",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "03.03.2007",
     "Rating": "C",
     "Berichte": [{
       "date": "11.04.2022",
@@ -406,7 +406,7 @@ playersu17 = [
     "Vorname": "Dustin",
     "Nachname": "Jurkiewicz",
     "Position": "ST",
-    "Geburtsdatum": "XX.XX.2007",
+    "Geburtsdatum": "09.11.2007",
     "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
@@ -617,6 +617,50 @@ def team(team_id):
       print("===========================================")
       print(request.form)
       print("===========================================")
+      
+      # Sort player list
+      if request.form.get("sort_players") != None:
+        team = TEAMS[ids[team_id]]
+        formation = team["formation"]
+        players = team["players"]
+        names = [p.split("_") for p in formation.values()]
+        colors = ["#ffffff" if len(n)==1 else 
+                  next((rating_mapping(player["Rating"]) for player in players if 
+                        player["Vorname"] == n[0] 
+                        and player["Nachname"] == n[1]), None)
+                  for n in names][1:]
+        match request.form.get("sort_players"):
+          case "own_vorn_inc":
+            sorted_players = sorted(players, key=lambda x: x['Vorname'].upper())
+          case "own_vorn_dec":
+            sorted_players = sorted(players, key=lambda x: x['Vorname'].upper(), reverse=True)
+            
+          case "own_nachn_inc":
+            sorted_players = sorted(players, key=lambda x: x['Nachname'].upper())
+          case "own_nachn_dec":
+            sorted_players = sorted(players, key=lambda x: x['Nachname'].upper(), reverse=True)
+            
+          case "own_gebdat_inc":
+            sorted_players = sorted(players, key=lambda x: 
+                                    (int(x['Geburtsdatum'].split(".")[2]), 
+                                    int(x['Geburtsdatum'].split(".")[1]),
+                                    int(x['Geburtsdatum'].split(".")[0])))
+          case "own_gebdat_dec":
+            sorted_players = sorted(players, key=lambda x: 
+              (int(x['Geburtsdatum'].split(".")[2]), 
+              int(x['Geburtsdatum'].split(".")[1]),
+              int(x['Geburtsdatum'].split(".")[0])), reverse=True)
+            
+          case "own_rating_inc":
+            sorted_players = sorted(players, key=lambda x: x['Rating'])
+          case "own_rating_dec":
+            sorted_players = sorted(players, key=lambda x: x['Rating'], reverse=True)
+
+        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+           user=session["user"], 
+           teams=TEAMS, rights=session["rights"], 
+           colors_formation=colors, players=sorted_players)
+        
       # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
@@ -707,7 +751,8 @@ def team(team_id):
               for n in names][1:]
     return render_template("team/team.html", team=TEAMS[ids[team_id]], user=session["user"], 
                            teams=TEAMS, rights=session["rights"], 
-                           colors_formation=colors)
+                           colors_formation=colors, 
+                           players=sorted(players, key=lambda x: x['Nachname'].upper()))
   else:
     return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 

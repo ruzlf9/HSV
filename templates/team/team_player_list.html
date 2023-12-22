@@ -19,9 +19,65 @@
         <th scope="col">Geburtsdatum</th>
         <th scope="col">Rating</th>
       </tr>
+      <tr>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_vorn_inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_vorn_dec">
+              ▼
+            </button>
+          </form>
+        </th>
+        
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_nachn_inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_nachn_dec">
+              ▼
+            </button>
+          </form>
+        </th>
+        
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_gebdat_inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_gebdat_dec">
+              ▼
+            </button>
+          </form>
+        </th>
+        
+        <th scope="col">
+          <form style="display: inline-block; margin-right: 4px;" method="post">
+            <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_rating_inc">
+              ▲
+            </button>
+          </form>
+              <form style="display: inline-block; margin-right: 4px;" method="post">
+                <button style="font-size: 12px; width: 24px; height: 24px; border: none; background-color: #f0f0f0; color: #333; cursor: pointer; border-radius: 4px;" type="submit" name="sort_players" value="own_rating_dec">
+              ▼
+            </button>
+          </form>
+        </th>
+      </tr>
     </thead>
     <tbody>
-      {% for player in team["players"] %}
+      {% for player in players %}
         <tr>
           <td><form method="post">
             <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
@@ -38,7 +94,6 @@
               <i style="font-size:24px" class="fa">&#xf15b;</i>
             </a>
           </td>
-          <!--<td><p><a class="link-opacity-100-hover" href="/{{team["name"]}}/player/{{ player["Vorname"] }}_{{ player["Nachname"] }}">Link</a></p></td>-->
           <td>{{ player["Vorname"] }}</td>
           <td>{{ player["Nachname"] }}</td>
           <td>{{ player["Geburtsdatum"] }}</td>
