@@ -629,32 +629,31 @@ def team(team_id):
                         player["Vorname"] == n[0] 
                         and player["Nachname"] == n[1]), None)
                   for n in names][1:]
-        match request.form.get("sort_players"):
-          case "own_vorn_inc":
-            sorted_players = sorted(players, key=lambda x: x['Vorname'].upper())
-          case "own_vorn_dec":
-            sorted_players = sorted(players, key=lambda x: x['Vorname'].upper(), reverse=True)
-            
-          case "own_nachn_inc":
-            sorted_players = sorted(players, key=lambda x: x['Nachname'].upper())
-          case "own_nachn_dec":
-            sorted_players = sorted(players, key=lambda x: x['Nachname'].upper(), reverse=True)
-            
-          case "own_gebdat_inc":
-            sorted_players = sorted(players, key=lambda x: 
-                                    (int(x['Geburtsdatum'].split(".")[2]), 
-                                    int(x['Geburtsdatum'].split(".")[1]),
-                                    int(x['Geburtsdatum'].split(".")[0])))
-          case "own_gebdat_dec":
-            sorted_players = sorted(players, key=lambda x: 
-              (int(x['Geburtsdatum'].split(".")[2]), 
-              int(x['Geburtsdatum'].split(".")[1]),
-              int(x['Geburtsdatum'].split(".")[0])), reverse=True)
-            
-          case "own_rating_inc":
-            sorted_players = sorted(players, key=lambda x: x['Rating'])
-          case "own_rating_dec":
-            sorted_players = sorted(players, key=lambda x: x['Rating'], reverse=True)
+        if request.form.get("sort_players") == "own_vorn_inc":
+          sorted_players = sorted(players, key=lambda x: x['Vorname'].upper())
+        if request.form.get("sort_players") == "own_vorn_dec":
+          sorted_players = sorted(players, key=lambda x: x['Vorname'].upper(), reverse=True)
+          
+        if request.form.get("sort_players") == "own_nachn_inc":
+          sorted_players = sorted(players, key=lambda x: x['Nachname'].upper())
+        if request.form.get("sort_players") == "own_nachn_dec":
+          sorted_players = sorted(players, key=lambda x: x['Nachname'].upper(), reverse=True)
+          
+        if request.form.get("sort_players") == "own_gebdat_inc":
+          sorted_players = sorted(players, key=lambda x: 
+                                  (int(x['Geburtsdatum'].split(".")[2]), 
+                                  int(x['Geburtsdatum'].split(".")[1]),
+                                  int(x['Geburtsdatum'].split(".")[0])))
+        if request.form.get("sort_players") == "own_gebdat_dec":
+          sorted_players = sorted(players, key=lambda x: 
+            (int(x['Geburtsdatum'].split(".")[2]), 
+            int(x['Geburtsdatum'].split(".")[1]),
+            int(x['Geburtsdatum'].split(".")[0])), reverse=True)
+          
+        if request.form.get("sort_players") == "own_rating_inc":
+          sorted_players = sorted(players, key=lambda x: x['Rating'])
+        if request.form.get("sort_players") == "own_rating_dec":
+          sorted_players = sorted(players, key=lambda x: x['Rating'], reverse=True)
 
         return render_template("team/team.html", team=TEAMS[ids[team_id]], 
            user=session["user"], 
