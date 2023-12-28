@@ -12,6 +12,46 @@
         object-fit:cover;
         width:100%;
       }
+
+      .grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+
+      .card {
+        margin: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        text-decoration: none;
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        max-width: 300px;
+      }
+
+      .card:hover,
+      .card:focus,
+      .card:active {
+        color: #0070f3;
+        border-color: #0070f3;
+      }
+
+      .card h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
     </style>
     <title> HSV - Scouting</title>
   </head>
@@ -26,21 +66,27 @@
           <img src="/static/HSVLogo.png" width="200" height="200">
         </h1>
       </div>
-
-      <div class="mt-4">
-        <h2 class="text-center"> Herzlich Willkommen {{ user.split("@")[0].split(".")[0].capitalize() }} ! </h2>
-      </div>
-
-      <div class="mt-4">
-        <h3 class="text-center"> Du hast Zugriff für folgende Mannschaften: </h3>
-        <ul>
-          <div class="link-box">
-          {% for team in rights %}
-            <h4 class="text-center"> <a class="link" href="/{{ team }}">{{ team }}</a> </h4>
-          {% endfor %}
-          </div>
-        </ul>
-      </div>
     </div>
+
+    <div class="mt-4">
+      <h2 class="text-center"> Herzlich Willkommen {{ user.split("@")[0].split(".")[0].capitalize() }} ! </h2>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="text-center"> 
+        Du hast Zugriff für folgende Mannschaften: 
+      </h3>
+    </div>
+    
+    <div class="text-center">
+      <section class="grid">
+        {% for team in rights %}
+          <a href="/{{ team }}" class='card'>
+            <h2>{{ team }}</h2>
+          </a>
+        {% endfor %}
+      </section>
+    </div>
+    
   </body>
 </html>

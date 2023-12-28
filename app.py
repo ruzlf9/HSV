@@ -871,9 +871,9 @@ def edit_player(team_id, player_id, external):
       print(request.form)
       print("====================================")
       if request.form.get('save_changes') == 'save':
-        player_infos["Vorname"] = request.form.get('vorname')
-        player_infos["Nachname"] = request.form.get('nachname')
-        player_infos["Geburtsdatum"] = request.form.get('gebdatum')
+        player_infos["Vorname"] = request.form.get('vorname').strip()
+        player_infos["Nachname"] = request.form.get('nachname').strip()
+        player_infos["Geburtsdatum"] = request.form.get('gebdatum').strip()
         player_infos["Rating"] = request.form.get('rating').strip()
         if type == "external":
           player_infos["Verein"] = request.form.get('verein')
