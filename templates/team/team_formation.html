@@ -21,11 +21,7 @@
 
   <body>
   <br>
-  <form method="post">
-      <div class="container text-center">
-        <button type="submit" class="btn btn-primary" name="save_formation" value="save"}>Aufstellung speichern</button>
-      </div>
-      <br>
+  <form method="post" id="formationForm">
     
     <div class="container text-center">
       <div class="row justify-content-md-center">
@@ -33,7 +29,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[0] }}">
-          <select class="form-control" id="LS1" name="LS1">
+          <select class="form-control" id="LS1" name="LS1" onchange="submitForm()">
             <option value="{{ team["formation"]["LS1"].split("_")[0]+"_"+team["formation"]["LS1"].split("_")[1] if team["formation"]["LS1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LS1"].split("_")[0][0]+"."+ team["formation"]["LS1"].split("_")[1] if team["formation"]["LS1"] != "" else "----"}}
             </option>
@@ -60,7 +56,7 @@
         
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[1] }}">
-          <select class="form-control" id="ST1" name="ST1">
+          <select class="form-control" id="ST1" name="ST1" onchange="submitForm()">
             <option value="{{ team["formation"]["ST1"].split("_")[0]+"_"+team["formation"]["ST1"].split("_")[1] if team["formation"]["ST1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ST1"].split("_")[0][0]+"."+ team["formation"]["ST1"].split("_")[1] if team["formation"]["ST1"] != "" else "----"}}
             </option>
@@ -88,7 +84,7 @@
 
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[2] }}">
-          <select class="form-control" id="RS1" name="RS1">
+          <select class="form-control" id="RS1" name="RS1" onchange="submitForm()">
             <option value="{{ team["formation"]["RS1"].split("_")[0]+"_"+team["formation"]["RS1"].split("_")[1] if team["formation"]["RS1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RS1"].split("_")[0][0]+"."+ team["formation"]["RS1"].split("_")[1] if team["formation"]["RS1"] != "" else "----"}}
             </option>
@@ -122,7 +118,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[3] }}">
-          <select class="form-control" id="LS2" name="LS2">
+          <select class="form-control" id="LS2" name="LS2" onchange="submitForm()">
             <option value="{{ team["formation"]["LS2"].split("_")[0]+"_"+team["formation"]["LS2"].split("_")[1] if team["formation"]["LS2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LS2"].split("_")[0][0]+"."+ team["formation"]["LS2"].split("_")[1] if team["formation"]["LS2"] != "" else "----"}}
             </option>
@@ -150,7 +146,7 @@
 
       
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[4] }}">
-          <select class="form-control" id="ST2" name="ST2">
+          <select class="form-control" id="ST2" name="ST2" onchange="submitForm()">
             <option value="{{ team["formation"]["ST2"].split("_")[0]+"_"+team["formation"]["ST2"].split("_")[1] if team["formation"]["ST2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ST2"].split("_")[0][0]+"."+ team["formation"]["ST2"].split("_")[1] if team["formation"]["ST2"] != "" else "----"}}
             </option>
@@ -178,7 +174,7 @@
 
       
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[5] }}">
-          <select class="form-control" id="RS2" name="RS2">
+          <select class="form-control" id="RS2" name="RS2" onchange="submitForm()">
             <option value="{{ team["formation"]["RS2"].split("_")[0]+"_"+team["formation"]["RS2"].split("_")[1] if team["formation"]["RS2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RS2"].split("_")[0][0]+"."+ team["formation"]["RS2"].split("_")[1] if team["formation"]["RS2"] != "" else "----"}}
             </option>
@@ -212,7 +208,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[6] }}">
-          <select class="form-control" id="LS3" name="LS3">
+          <select class="form-control" id="LS3" name="LS3" onchange="submitForm()">
             <option value="{{ team["formation"]["LS3"].split("_")[0]+"_"+team["formation"]["LS3"].split("_")[1] if team["formation"]["LS3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LS3"].split("_")[0][0]+"."+ team["formation"]["LS3"].split("_")[1] if team["formation"]["LS3"] != "" else "----"}}
             </option>
@@ -240,7 +236,7 @@
 
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[7] }}">
-          <select class="form-control" id="ST3" name="ST3">
+          <select class="form-control" id="ST3" name="ST3" onchange="submitForm()">
             <option value="{{ team["formation"]["ST3"].split("_")[0]+"_"+team["formation"]["ST3"].split("_")[1] if team["formation"]["ST3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ST3"].split("_")[0][0]+"."+ team["formation"]["ST3"].split("_")[1] if team["formation"]["ST3"] != "" else "----"}}
             </option>
@@ -268,7 +264,7 @@
 
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[8] }}">
-          <select class="form-control" id="RS3" name="RS3">
+          <select class="form-control" id="RS3" name="RS3" onchange="submitForm()">
             <option value="{{ team["formation"]["RS3"].split("_")[0]+"_"+team["formation"]["RS3"].split("_")[1] if team["formation"]["RS3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RS3"].split("_")[0][0]+"."+ team["formation"]["RS3"].split("_")[1] if team["formation"]["RS3"] != "" else "----"}}
             </option>
@@ -306,7 +302,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[9] }}">
-          <select class="form-control" id="ZML1" name="ZML1">
+          <select class="form-control" id="ZML1" name="ZML1" onchange="submitForm()">
             <option value="{{ team["formation"]["ZML1"].split("_")[0]+"_"+team["formation"]["ZML1"].split("_")[1] if team["formation"]["ZML1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZML1"].split("_")[0][0]+"."+ team["formation"]["ZML1"].split("_")[1] if team["formation"]["ZML1"] != "" else "----"}}
             </option>
@@ -334,7 +330,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[10] }}">
-          <select class="form-control" id="ZMR1" name="ZMR1">
+          <select class="form-control" id="ZMR1" name="ZMR1" onchange="submitForm()">
             <option value="{{ team["formation"]["ZMR1"].split("_")[0]+"_"+team["formation"]["ZMR1"].split("_")[1] if team["formation"]["ZMR1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZMR1"].split("_")[0][0]+"."+ team["formation"]["ZMR1"].split("_")[1] if team["formation"]["ZMR1"] != "" else "----"}}
             </option>
@@ -368,7 +364,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[11] }}">
-          <select class="form-control" id="ZML2" name="ZML2">
+          <select class="form-control" id="ZML2" name="ZML2" onchange="submitForm()">
             <option value="{{ team["formation"]["ZML2"].split("_")[0]+"_"+team["formation"]["ZML2"].split("_")[1] if team["formation"]["ZML2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZML2"].split("_")[0][0]+"."+ team["formation"]["ZML2"].split("_")[1] if team["formation"]["ZML2"] != "" else "----"}}
             </option>
@@ -396,7 +392,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[12] }}">
-          <select class="form-control" id="ZMR2" name="ZMR2">
+          <select class="form-control" id="ZMR2" name="ZMR2" onchange="submitForm()">
             <option value="{{ team["formation"]["ZMR2"].split("_")[0]+"_"+team["formation"]["ZMR2"].split("_")[1] if team["formation"]["ZMR2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZMR2"].split("_")[0][0]+"."+ team["formation"]["ZMR2"].split("_")[1] if team["formation"]["ZMR2"] != "" else "----"}}
             </option>
@@ -429,7 +425,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[13] }}">
-          <select class="form-control" id="ZML3" name="ZML3">
+          <select class="form-control" id="ZML3" name="ZML3" onchange="submitForm()">
             <option value="{{ team["formation"]["ZML3"].split("_")[0]+"_"+team["formation"]["ZML3"].split("_")[1] if team["formation"]["ZML3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZML3"].split("_")[0][0]+"."+ team["formation"]["ZML3"].split("_")[1] if team["formation"]["ZML3"] != "" else "----"}}
             </option>
@@ -457,7 +453,7 @@
         <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[14] }}">
-          <select class="form-control" id="ZMR3" name="ZMR3">
+          <select class="form-control" id="ZMR3" name="ZMR3" onchange="submitForm()">
             <option value="{{ team["formation"]["ZMR3"].split("_")[0]+"_"+team["formation"]["ZMR3"].split("_")[1] if team["formation"]["ZMR3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZMR3"].split("_")[0][0]+"."+ team["formation"]["ZMR3"].split("_")[1] if team["formation"]["ZMR3"] != "" else "----"}}
             </option>
@@ -492,7 +488,7 @@
 
       <div class="row justify-content-md-center">
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[15] }}">
-          <select class="form-control" id="LV1" name="LV1">
+          <select class="form-control" id="LV1" name="LV1" onchange="submitForm()">
             <option value="{{ team["formation"]["LV1"].split("_")[0]+"_"+team["formation"]["LV1"].split("_")[1] if team["formation"]["LV1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LV1"].split("_")[0][0]+"."+ team["formation"]["LV1"].split("_")[1] if team["formation"]["LV1"] != "" else "----"}}
             </option>
@@ -518,7 +514,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[16] }}">
-          <select class="form-control" id="LIV1" name="LIV1">
+          <select class="form-control" id="LIV1" name="LIV1" onchange="submitForm()">
             <option value="{{ team["formation"]["LIV1"].split("_")[0]+"_"+team["formation"]["LIV1"].split("_")[1] if team["formation"]["LIV1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LIV1"].split("_")[0][0]+"."+ team["formation"]["LIV1"].split("_")[1] if team["formation"]["LIV1"] != "" else "----"}}
             </option>
@@ -544,7 +540,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[17] }}">
-          <select class="form-control" id="ZIV1" name="ZIV1">
+          <select class="form-control" id="ZIV1" name="ZIV1" onchange="submitForm()">
             <option value="{{ team["formation"]["ZIV1"].split("_")[0]+"_"+team["formation"]["ZIV1"].split("_")[1] if team["formation"]["ZIV1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZIV1"].split("_")[0][0]+"."+ team["formation"]["ZIV1"].split("_")[1] if team["formation"]["ZIV1"] != "" else "----"}}
             </option>
@@ -570,7 +566,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[18] }}">
-          <select class="form-control" id="RIV1" name="RIV1">
+          <select class="form-control" id="RIV1" name="RIV1" onchange="submitForm()">
             <option value="{{ team["formation"]["RIV1"].split("_")[0]+"_"+team["formation"]["RIV1"].split("_")[1] if team["formation"]["RIV1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RIV1"].split("_")[0][0]+"."+ team["formation"]["RIV1"].split("_")[1] if team["formation"]["RIV1"] != "" else "----"}}
             </option>
@@ -597,7 +593,7 @@
 
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[19] }}">
-          <select class="form-control" id="RV1" name="RV1">
+          <select class="form-control" id="RV1" name="RV1" onchange="submitForm()">
             <option value="{{ team["formation"]["RV1"].split("_")[0]+"_"+team["formation"]["RV1"].split("_")[1] if team["formation"]["RV1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RV1"].split("_")[0][0]+"."+ team["formation"]["RV1"].split("_")[1] if team["formation"]["RV1"] != "" else "----"}}
             </option>
@@ -626,7 +622,7 @@
 
       <div class="row justify-content-md-center">
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[20] }}">
-          <select class="form-control" id="LV2" name="LV2">
+          <select class="form-control" id="LV2" name="LV2" onchange="submitForm()">
             <option value="{{ team["formation"]["LV2"].split("_")[0]+"_"+team["formation"]["LV2"].split("_")[1] if team["formation"]["LV2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LV2"].split("_")[0][0]+"."+ team["formation"]["LV2"].split("_")[1] if team["formation"]["LV2"] != "" else "----"}}
             </option>
@@ -652,7 +648,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[21] }}">
-          <select class="form-control" id="LIV2" name="LIV2">
+          <select class="form-control" id="LIV2" name="LIV2" onchange="submitForm()">
             <option value="{{ team["formation"]["LIV2"].split("_")[0]+"_"+team["formation"]["LIV2"].split("_")[1] if team["formation"]["LIV2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LIV2"].split("_")[0][0]+"."+ team["formation"]["LIV2"].split("_")[1] if team["formation"]["LIV2"] != "" else "----"}}
             </option>
@@ -678,7 +674,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[22] }}">
-          <select class="form-control" id="ZIV2" name="ZIV2">
+          <select class="form-control" id="ZIV2" name="ZIV2" onchange="submitForm()">
             <option value="{{ team["formation"]["ZIV2"].split("_")[0]+"_"+team["formation"]["ZIV2"].split("_")[1] if team["formation"]["ZIV2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZIV2"].split("_")[0][0]+"."+ team["formation"]["ZIV2"].split("_")[1] if team["formation"]["ZIV2"] != "" else "----"}}
             </option>
@@ -704,7 +700,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[23] }}">
-          <select class="form-control" id="RIV2" name="RIV2">
+          <select class="form-control" id="RIV2" name="RIV2" onchange="submitForm()">
             <option value="{{ team["formation"]["RIV2"].split("_")[0]+"_"+team["formation"]["RIV2"].split("_")[1] if team["formation"]["RIV2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RIV2"].split("_")[0][0]+"."+ team["formation"]["RIV2"].split("_")[1] if team["formation"]["RIV2"] != "" else "----"}}
             </option>
@@ -730,7 +726,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[24] }}">
-          <select class="form-control" id="RV2" name="RV2">
+          <select class="form-control" id="RV2" name="RV2" onchange="submitForm()">
             <option value="{{ team["formation"]["RV2"].split("_")[0]+"_"+team["formation"]["RV2"].split("_")[1] if team["formation"]["RV2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RV2"].split("_")[0][0]+"."+ team["formation"]["RV2"].split("_")[1] if team["formation"]["RV2"] != "" else "----"}}
             </option>
@@ -759,7 +755,7 @@
 
       <div class="row justify-content-md-center mb-4">
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[25] }}">
-          <select class="form-control" id="LV3" name="LV3">
+          <select class="form-control" id="LV3" name="LV3" onchange="submitForm()">
             <option value="{{ team["formation"]["LV3"].split("_")[0]+"_"+team["formation"]["LV3"].split("_")[1] if team["formation"]["LV3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LV3"].split("_")[0][0]+"."+ team["formation"]["LV3"].split("_")[1] if team["formation"]["LV3"] != "" else "----"}}
             </option>
@@ -785,7 +781,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[26] }}">
-          <select class="form-control" id="LIV3" name="LIV3">
+          <select class="form-control" id="LIV3" name="LIV3" onchange="submitForm()">
             <option value="{{ team["formation"]["LIV3"].split("_")[0]+"_"+team["formation"]["LIV3"].split("_")[1] if team["formation"]["LIV3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["LIV3"].split("_")[0][0]+"."+ team["formation"]["LIV3"].split("_")[1] if team["formation"]["LIV3"] != "" else "----"}}
             </option>
@@ -811,7 +807,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[27] }}">
-          <select class="form-control" id="ZIV3" name="ZIV3">
+          <select class="form-control" id="ZIV3" name="ZIV3" onchange="submitForm()">
             <option value="{{ team["formation"]["ZIV3"].split("_")[0]+"_"+team["formation"]["ZIV3"].split("_")[1] if team["formation"]["ZIV3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["ZIV3"].split("_")[0][0]+"."+ team["formation"]["ZIV3"].split("_")[1] if team["formation"]["ZIV3"] != "" else "----"}}
             </option>
@@ -837,7 +833,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[28] }}">
-          <select class="form-control" id="RIV3" name="RIV3">
+          <select class="form-control" id="RIV3" name="RIV3" onchange="submitForm()">
             <option value="{{ team["formation"]["RIV3"].split("_")[0]+"_"+team["formation"]["RIV3"].split("_")[1] if team["formation"]["RIV3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RIV3"].split("_")[0][0]+"."+ team["formation"]["RIV3"].split("_")[1] if team["formation"]["RIV3"] != "" else "----"}}
             </option>
@@ -863,7 +859,7 @@
         </div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[29] }}">
-          <select class="form-control" id="RV3" name="RV3">
+          <select class="form-control" id="RV3" name="RV3" onchange="submitForm()">
             <option value="{{ team["formation"]["RV3"].split("_")[0]+"_"+team["formation"]["RV3"].split("_")[1] if team["formation"]["RV3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["RV3"].split("_")[0][0]+"."+ team["formation"]["RV3"].split("_")[1] if team["formation"]["RV3"] != "" else "----"}}
             </option>
@@ -900,7 +896,7 @@
          <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[30] }}">
-          <select class="form-control" id="TW1" name="TW1">
+          <select class="form-control" id="TW1" name="TW1" onchange="submitForm()">
             <option value="{{ team["formation"]["TW1"].split("_")[0]+"_"+team["formation"]["TW1"].split("_")[1] if team["formation"]["TW1"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["TW1"].split("_")[0][0]+"."+ team["formation"]["TW1"].split("_")[1] if team["formation"]["TW1"] != "" else "----"}}
             </option>
@@ -934,7 +930,7 @@
          <div class="col col-lg-2"></div>
         
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[31] }}">
-          <select class="form-control" id="TW2" name="TW2">
+          <select class="form-control" id="TW2" name="TW2" onchange="submitForm()">
             <option value="{{ team["formation"]["TW2"].split("_")[0]+"_"+team["formation"]["TW2"].split("_")[1] if team["formation"]["TW2"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["TW2"].split("_")[0][0]+"."+ team["formation"]["TW2"].split("_")[1] if team["formation"]["TW2"] != "" else "----"}}
             </option>
@@ -967,7 +963,7 @@
          <div class="col col-lg-2"></div>
          <div class="col col-lg-2"></div>
         <div class="col col-lg-2" style="border:6px solid {{ colors_formation[32] }}">
-          <select class="form-control" id="TW3" name="TW3">
+          <select class="form-control" id="TW3" name="TW3" onchange="submitForm()">
             <option value="{{ team["formation"]["TW3"].split("_")[0]+"_"+team["formation"]["TW3"].split("_")[1] if team["formation"]["TW3"] != "" else ""}}" class="text-center" selected>
               {{ team["formation"]["TW3"].split("_")[0][0]+"."+ team["formation"]["TW3"].split("_")[1] if team["formation"]["TW3"] != "" else "----"}}
             </option>
@@ -997,5 +993,12 @@
       </div>
     </div>
   </form>
+
+  <script>
+    function submitForm() {
+      document.getElementById("formationForm").submit();
+    }
+  </script>
+
   </body>
 

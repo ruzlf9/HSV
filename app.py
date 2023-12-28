@@ -521,7 +521,7 @@ TEAMS = [
     "id": "U19",
     "name": "U19",
     "players": playersu19,
-    "formation": {'save_formation': 'save', 'LS1': 'Test_Spieler', 'ST1': '', 'RS1': '',
+    "formation": {'LS1': 'Test_Spieler', 'ST1': '', 'RS1': '',
                   'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Spieler_Zwei',
                   'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
                   'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
@@ -535,14 +535,14 @@ TEAMS = [
     "id": "U17",
     "name": "U17",
     "players": playersu17,
-    "formation": {'save_formation': 'save', 'LS1': 'Dustin_Jurkiewicz', 'ST1': 'Jan Luca_Lamay', 'RS1': 'Kilian_Zierhorst', 'LS2': 'Japhet_Nsimba', 'ST2': 'Joshua_Poll', 'RS2': 'Elton_Kadrija', 'LS3': '', 'ST3': '', 'RS3': '', 'ZML1': 'Paul_Stehger', 'ZMR1': 'Simon_Strothmüller', 'ZML2': 'Jannik_Leppla', 'ZMR2': 'Leon_von Hatzfeld', 'ZML3': 'Kerem_Aksu', 'ZMR3': 'Nils_Kleine', 'LV1': 'Julian_Schneider', 'LIV1': 'Luis_Majdanac', 'ZIV1': 'Noah_Fell', 'RIV1': 'Leandro_Tavares', 'RV1': 'Batin_Gökalb', 'LV2': 'Mattis_Linnewerth', 'LIV2': 'Jan-Luca_Kirchner', 'ZIV2': '', 'RIV2': '', 'RV2': 'Bakihan_Ayhan', 'LV3': '', 'LIV3': '', 'ZIV3': '', 'RIV3': '', 'RV3': 'Fabio_Doliwa', 'TW1': 'Joshua_Sartorius', 'TW2': 'Marlon_Randelhoff', 'TW3': ''},
+    "formation": {'LS1': 'Dustin_Jurkiewicz', 'ST1': 'Jan Luca_Lamay', 'RS1': 'Kilian_Zierhorst', 'LS2': 'Japhet_Nsimba', 'ST2': 'Joshua_Poll', 'RS2': 'Elton_Kadrija', 'LS3': '', 'ST3': '', 'RS3': '', 'ZML1': 'Paul_Stehger', 'ZMR1': 'Simon_Strothmüller', 'ZML2': 'Jannik_Leppla', 'ZMR2': 'Leon_von Hatzfeld', 'ZML3': 'Kerem_Aksu', 'ZMR3': 'Nils_Kleine', 'LV1': 'Julian_Schneider', 'LIV1': 'Luis_Majdanac', 'ZIV1': 'Noah_Fell', 'RIV1': 'Leandro_Tavares', 'RV1': 'Batin_Gökalb', 'LV2': 'Mattis_Linnewerth', 'LIV2': 'Jan-Luca_Kirchner', 'ZIV2': '', 'RIV2': '', 'RV2': 'Bakihan_Ayhan', 'LV3': '', 'LIV3': '', 'ZIV3': '', 'RIV3': '', 'RV3': 'Fabio_Doliwa', 'TW1': 'Joshua_Sartorius', 'TW2': 'Marlon_Randelhoff', 'TW3': ''},
     "external":externalu17
   },
   {
     "id": "U16",
     "name": "U16",
     "players": playersu16,
-    "formation": {'save_formation': 'save', 'LS1': '', 'ST1': '', 'RS1': '',
+    "formation": {'LS1': '', 'ST1': '', 'RS1': '',
       'LS2': '', 'ST2': '', 'RS2': '', 'LS3': '', 'ST3': 'Spieler_Zwei',
       'RS3': '', 'ZML1': '', 'ZMR1': '', 'ZML2': '', 'ZMR2': '', 
       'ZML3': '', 'ZMR3': '', 'LV1': '', 'LIV1': '', 'ZIV1': '',
@@ -634,7 +634,7 @@ def team(team_id):
                   next((rating_mapping(player["Rating"]) for player in team["players"] if 
                         player["Vorname"] == n[0] 
                         and player["Nachname"] == n[1]), None)
-                  for n in names][1:]
+                  for n in names]
         sorted_players = players
         
         if action == "vorn.inc":
@@ -676,7 +676,6 @@ def team(team_id):
              teams=TEAMS, rights=session["rights"], 
              colors_formation=colors, players=team["players"], externals=sorted_players)
 
-      
       # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
@@ -749,7 +748,7 @@ def team(team_id):
                                teams=TEAMS, rights=session["rights"], external=True)
 
       # Save current formation
-      if request.form.get('save_formation') == 'save':
+      if request.form.get("LS1") != None:
         team = TEAMS[ids[team_id]]
         print(team["formation"])
         team["formation"] = request.form.to_dict()
@@ -764,7 +763,7 @@ def team(team_id):
               next((rating_mapping(player["Rating"]) for player in players if 
                     player["Vorname"] == n[0] 
                     and player["Nachname"] == n[1]), None)
-              for n in names][1:]
+              for n in names]
     return render_template("team/team.html", team=TEAMS[ids[team_id]], 
                            user=session["user"], 
                            teams=TEAMS, rights=session["rights"], 
