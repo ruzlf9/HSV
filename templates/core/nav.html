@@ -1,8 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="/home"><img src="/static/HSVLogo.png" class="d-inline-block align-text-top" width="30" height=30>Scouting</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="/static/HSVLogo.png" class="d-inline-block align-text-top" width="30" height=30>Scouting
+  </a>
   
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav mr-auto">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-autp">
+      
       <li class="nav-item active">
         <a class="nav-link" href="/home">Home</a>
       </li>
@@ -11,7 +18,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Teams
         </a>
-        
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           {% for team in teams %}
             {% if team["id"] in rights %}
@@ -22,18 +29,10 @@
           {% endfor %}
         </div>
       </li>
-    </ul>
-    
-    <div class="collapse navbar-collapse justify-content-end">
-    <ul class="navbar-nav ml-auto"">
+
       <li class="nav-item active">
         <a class="nav-link" href="/logout">Logout</a>
       </li>
     </ul>
-    </div>
-    
   </div>
 </nav>
-<br>
-<br>
-<br>

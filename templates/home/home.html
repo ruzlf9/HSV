@@ -52,6 +52,10 @@
         font-size: 1.25rem;
         line-height: 1.5;
       }
+
+      .max-height-row {
+          max-height: 200px; /* Set your desired maximum height here */
+      }
     </style>
     <title> HSV - Scouting</title>
   </head>
@@ -59,15 +63,42 @@
   <body>
     <div class="mb-4">
       {% include 'core/nav.html' %}
-      <div class="mt-4">
+    </div>
+      <!--<div class="mt-4">
         <h1 class="text-center"> 
           <img src="/static/HSVLogo.png" width="200" height="200">
           HSV - Scouting
           <img src="/static/HSVLogo.png" width="200" height="200">
         </h1>
-      </div>
+      </div>-->
+    
+
+    <div class="row justify-content-center max-height-row">
+        <div class="col-lg-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <img src="/static/HSVLogo.png" class="img-fluid">
+                </div>
+
+                <div class="col-4 text-center my-auto">
+                    <h1>HSV-Scouting</h1>
+                </div>
+
+                <div class="col-4">
+                    <img src="/static/HSVLogo.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </div>
 
+
+
+
+
+
+
+
+  
     <div class="mt-4">
       <h2 class="text-center"> Herzlich Willkommen {{ user.split("@")[0].split(".")[0].capitalize() }} ! </h2>
     </div>

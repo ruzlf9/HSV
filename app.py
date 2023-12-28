@@ -1,11 +1,9 @@
 import datetime
-
 import numpy as np
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
-#app.permanent_session_lifetime = timedelta(seconds=10)
 
 playersu19 = [
   {
