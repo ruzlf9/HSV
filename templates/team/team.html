@@ -25,6 +25,10 @@
   </head>
 
   <body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <div class="mb-4">
       {% include 'core/nav.html' %}
       
@@ -46,20 +50,10 @@
         {% include 'team/team_external_list.html' %}
       </div>
       
-      <!--<div class="container text-center">
-        <div class="row gx-5">
-          <div class="col" id="own_players">
-            {% include 'team/team_player_list.html' %}
-          </div>
-          <div class="col" id="external_players">
-            {% include 'team/team_external_list.html' %}
-          </div>
-        </div>
-      </div>-->
     </div>
 
 
-    <nav class="navbar sticky-bottom bg-body-tertiary navbar-expand-lg">
+    <nav class="navbar sticky-bottom bg-body-tertiary navbar-expand-lg navbar-expand-sm justify-content-between">
       <div class="container-fluid navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item active">
@@ -76,10 +70,22 @@
         </ul>
       </div>
     </nav>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+      /* Custom CSS to override Bootstrap's default behavior */
+      @media (max-width: 767px) { /* Adjust breakpoint as needed */
+        .navbar-expand-sm .navbar-nav {
+          flex-direction: row !important; /* Display items horizontally */
+        }
+        .navbar-expand-sm .collapse {
+          display: flex !important; /* Ensure the collapsed menu is displayed horizontally */
+          flex-basis: auto;
+        }
+        .navbar-expand-sm .navbar-nav .nav-item {
+          margin-right: 0.5rem; /* Add spacing between items if needed */
+        }
+      }
+    </style>
 
   </body>
 </html>
