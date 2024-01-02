@@ -688,6 +688,13 @@ def team(team_id):
         team["players"] = [p for p in team["players"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
+        for key, value in team["formation"].items():
+          if value == f"{vorname}_{nachname}":
+              position = key
+              break
+        team["formation"][position] = ""
+        print(team["formation"])
+        
         return redirect(location="/"+team_id)
 
       # Delete external Player
@@ -711,10 +718,12 @@ def team(team_id):
                       'Nachname': request.form.get("nachname"), 
                       'Geburtsdatum': gebdatum, 
                       'Rating': request.form.get("rating"), 
-                      'Berichte': [{'date': str(datetime.datetime.today().day)+
-                                     "."+str(datetime.datetime.today().month)+
-                                     "."+str(datetime.datetime.today().year), 
-                                    'bericht': request.form.get("report")}
+                      'Berichte': [{'date':
+                                    str(datetime.datetime.today().day)+
+                              "."+str(datetime.datetime.today().month)+
+                             "."+str(datetime.datetime.today().year), 
+                                    'bericht':
+                                    request.form.get("report")}
                                    ]}
         
         team["players"].append(new_player)
