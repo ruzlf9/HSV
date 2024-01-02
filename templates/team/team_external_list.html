@@ -53,7 +53,7 @@
           <th scope="col">Nachname</th>
           <th scope="col">Verein</th>
           <th scope="col">Geburtsdatum</th>
-          <th scope="col">Bewertung</th>
+          <th scope="col">Rating</th>
         </tr>
         
         <tr>
@@ -165,18 +165,18 @@
           <tr>
             <td style="display: flex; align-items: center;">
               <form method="post" style="margin-right: 4px;">
-                <button type="submit" class="btn btn-danger" name="delete_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}">
+                <button type="submit" class="btn btn-danger" name="delete_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}">
                   <i style="font-size:24px" class="fa">&#xf1f8;</i>
                 </button>
               </form>
   
-              <form action="{{ '/'+team['id']+'/player/'+player['Vorname']+'_'+player['Nachname']+'/edit' }}" method="get" style="margin-right: 4px;">
+              <form action="{{ '/'+team['id']+'/external/'+player['Vorname']+'_'+player['Nachname']+'/edit' }}" method="get" style="margin-right: 4px;">
                 <button type="submit" class="btn btn-primary">
                   <i style="font-size:24px" class="fa">&#xf044;</i>
                 </button>
               </form>
   
-              <form action="/{{team['name']}}/player/{{ player['Vorname'] }}_{{ player['Nachname'] }}" method="get">
+              <form action="/{{team['name']}}/external/{{ player['Vorname'] }}_{{ player['Nachname'] }}" method="get">
                 <button type="submit" class="btn btn-primary">
                   <i style="font-size:24px" class="fa">&#xf06e;</i>
                 </button>

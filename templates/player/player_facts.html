@@ -1,29 +1,37 @@
-<div class="col-10 container text-center">
-  <div class="mt-4">
-    <h1> Infos </h1>
-  </div>
-  <div class="mt-4">
+<div class="mt-4">
+    <h1> Steckbrief </h1>
+</div>
+
+<table class="table table-hover">
+  <tbody>
     {% for fact in player %}
       {% if fact != "Berichte" %}
-        <h3> {{ fact }} : {{ player[fact]}} </h3>
+        <tr>
+          <td><strong>{{ fact }}</strong></td>
+          <td>{{ player[fact] }}</td>
+        </tr>
       {% endif %}
     {% endfor %}
-  </div>
-  <div>
-    {% if external %}
-      <a href="{{ "/"+team["id"]+"/external/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
-    <form method="post">
-      <button type="submit" class="btn btn-danger" name="delete_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
-        Delete
-      </button>
-    </form>
-    {% else %}
-    <a href="{{ "/"+team["id"]+"/player/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
-    <form method="post">
-      <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
-        Delete
-      </button>
-    </form>
-    {% endif %}
-  </div>
+  </tbody>
+</table>
+
+
+
+  
+<div>
+  {% if external %}
+    <a href="{{ "/"+team["id"]+"/external/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
+  <form method="post">
+    <button type="submit" class="btn btn-danger" name="delete_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
+      Delete
+    </button>
+  </form>
+  {% else %}
+  <a href="{{ "/"+team["id"]+"/player/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
+  <form method="post">
+    <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
+      Delete
+    </button>
+  </form>
+  {% endif %}
 </div>
