@@ -75,7 +75,7 @@ playersu17 = [
     "Nachname": "Randelhoff",
     "Position": "TW",
     "Geburtsdatum": "01.01.2007",
-    "Rating": "C",
+    "Rating": "B",
     "Berichte": [{
       "date": "11.04.2022",
       "bericht": "Alt Bericht"
@@ -646,6 +646,11 @@ def team(team_id):
           sorted_players = sorted(players, key=lambda x: x['Nachname'].upper())
         if action == "nachn.dec":
           sorted_players = sorted(players, key=lambda x: x['Nachname'].upper(), reverse=True)
+
+        if action == "verein.inc":
+          sorted_players = sorted(players, key=lambda x: x['Verein'].upper())
+        if action == "verein.dec":
+          sorted_players = sorted(players, key=lambda x: x['Verein'].upper(), reverse=True)
           
         if action == "gebdat.inc":
           sorted_players = sorted(players, key=lambda x: 
