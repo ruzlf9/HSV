@@ -51,6 +51,7 @@
           <th scope="col"> </th>
           <th scope="col">Vorname</th>
           <th scope="col">Nachname</th>
+          <th scope="col">Position</th>
           <th scope="col">Verein</th>
           <th scope="col">Geburtsdatum</th>
           <th scope="col">Rating</th>
@@ -90,6 +91,25 @@
             <form style="display: inline-block; margin-right: 4px;" method="post">
               <div class="sort-btn">
                   <button type="submit" name="sort_players" value="ext_nachn.dec">
+                      ▼
+                  </button>
+              </div>
+            </form>
+          </th>
+
+          <th scope="col">
+            <form style="display: inline-block; margin-right: 4px;" method="post">
+              <div class="sort-btn">
+                  <button type="submit" name="sort_players" value="ext_pos.inc">
+                      ▲
+                  </button>
+              </div>
+
+            </form>
+
+            <form style="display: inline-block; margin-right: 4px;" method="post">
+              <div class="sort-btn">
+                  <button type="submit" name="sort_players" value="ext_pos.dec">
                       ▼
                   </button>
               </div>
@@ -181,10 +201,17 @@
                   <i style="font-size:24px" class="fa">&#xf06e;</i>
                 </button>
               </form>
+
+              <form method="post" style="margin-left: 4px;">
+                <button type="submit" class="btn btn-primary" name="sign_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}">
+                  <i style="font-size:24px" class="fa">&#xf2b5;</i>
+                </button>
+              </form>
             </td>
   
             <td>{{ player["Vorname"] }}</td>
             <td>{{ player["Nachname"] }}</td>
+            <td>{{ player["Position"] }}</td>
             <td>{{ player["Verein"] }}</td>
             <td>{{ player["Geburtsdatum"] }}</td>
             <td>{{ player["Rating"] }}</td>

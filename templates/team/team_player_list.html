@@ -51,6 +51,7 @@
           <th scope="col"> </th>
           <th scope="col">Vorname</th>
           <th scope="col">Nachname</th>
+          <th scope="col">Position</th>
           <th scope="col">Geburtsdatum</th>
           <th scope="col">Rating</th>
         </tr>
@@ -88,6 +89,25 @@
             <form style="display: inline-block; margin-right: 4px;" method="post">
               <div class="sort-btn">
                   <button type="submit" name="sort_players" value="own_nachn.dec">
+                      ▼
+                  </button>
+              </div>
+            </form>
+          </th>
+
+          <th scope="col">
+            <form style="display: inline-block; margin-right: 4px;" method="post">
+              <div class="sort-btn">
+                  <button type="submit" name="sort_players" value="own_pos.inc">
+                      ▲
+                  </button>
+              </div>
+
+            </form>
+
+            <form style="display: inline-block; margin-right: 4px;" method="post">
+              <div class="sort-btn">
+                  <button type="submit" name="sort_players" value="own_pos.dec">
                       ▼
                   </button>
               </div>
@@ -164,6 +184,7 @@
   
             <td>{{ player["Vorname"] }}</td>
             <td>{{ player["Nachname"] }}</td>
+            <td>{{ player["Position"] }}</td>
             <td>{{ player["Geburtsdatum"] }}</td>
             <td>{{ player["Rating"] }}</td>
           </tr>

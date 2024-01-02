@@ -417,10 +417,10 @@ playersu17 = [
   },
 ]
 
-externalu17 = [
-  {
+externalu17 = [{
     "Vorname": "Externer",
     "Nachname": "Spieler",
+    "Position": "TW",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -436,6 +436,7 @@ externalu17 = [
   {
     "Vorname": "Anderer",
     "Nachname": "Externer",
+    "Position": "ZIV",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -685,6 +686,9 @@ def team(team_id):
         player = request.form.get("delete_player")
         vorname = player.split("_")[0]
         nachname = player.split("_")[1]
+        team["external"].append([p for p in team["players"] if 
+              p.get('Vorname') == vorname and 
+              p.get("Nachname") == nachname][0])
         team["players"] = [p for p in team["players"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
@@ -693,7 +697,6 @@ def team(team_id):
               position = key
               break
         team["formation"][position] = ""
-        print(team["formation"])
         
         return redirect(location="/"+team_id)
 
@@ -706,6 +709,23 @@ def team(team_id):
         team["external"] = [p for p in team["external"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
+        return redirect(location="/"+team_id)
+
+      # Sign external player
+      if request.form.get("sign_external_player") != None:
+        team = TEAMS[ids[team_id]]
+        player = request.form.get("sign_external_player")
+        vorname, nachname = player.split("_")
+        player_infos = [p for p in team["external"] if 
+                        p.get('Vorname') == vorname and 
+                        p.get("Nachname") == nachname][0]
+        team["external"] = [p for p in team["external"] if 
+                           p.get('Vorname') != vorname and 
+                           p.get("Nachname") != nachname]
+        
+        if 'Verein' in player_infos:
+          del player_infos['Verein']
+        team["players"].append(player_infos)
         return redirect(location="/"+team_id)
         
       # Add own player
@@ -810,15 +830,24 @@ def player_helper(team_id, player_id, external) -> str:
       print(request.form)
       print("--------------------------")
 
-      # Delete player
+      # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
         player = request.form.get("delete_player")
         vorname = player.split("_")[0]
         nachname = player.split("_")[1]
+        team["external"].append([p for p in team["players"] if 
+              p.get('Vorname') == vorname and 
+              p.get("Nachname") == nachname][0])
         team["players"] = [p for p in team["players"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
+        for key, value in team["formation"].items():
+          if value == f"{vorname}_{nachname}":
+              position = key
+              break
+        team["formation"][position] = ""
+
         return redirect(location="/"+team_id)
 
 

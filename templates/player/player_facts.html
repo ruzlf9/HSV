@@ -20,17 +20,24 @@
   
 <div>
   {% if external %}
-    <a href="{{ "/"+team["id"]+"/external/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
+    <a href="{{ "/"+team["id"]+"/external/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Bearbeiten</a>
   <form method="post">
     <button type="submit" class="btn btn-danger" name="delete_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
-      Delete
+      Löschen
+    </button>
+  </form>
+
+  <form method="post">
+    <button type="submit" class="btn btn-primary" name="sign_external_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
+      Verpflichten
     </button>
   </form>
   {% else %}
-  <a href="{{ "/"+team["id"]+"/player/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Edit</a>
+  
+  <a href="{{ "/"+team["id"]+"/player/"+player["Vorname"]+"_"+player["Nachname"]+"/edit" }}" class="btn btn-primary">Bearbeiten</a>
   <form method="post">
     <button type="submit" class="btn btn-danger" name="delete_player" value={{ player["Vorname"]+"_"+ player["Nachname"]}}>
-      Delete
+      Löschen
     </button>
   </form>
   {% endif %}
