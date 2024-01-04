@@ -9,6 +9,7 @@ playersu19 = [
   {
     "Vorname": "Test",
     "Nachname": "Spieler",
+    "Position": "TW",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
     "Berichte": [{
@@ -23,6 +24,7 @@ playersu19 = [
   {
     "Vorname": "Spieler",
     "Nachname": "Zwei",
+    "Position": "TW",
     "Geburtsdatum": "11.04.2006",
     "Rating": "B",
     "Berichte": [{
@@ -40,6 +42,7 @@ externalu19 = [
   {
     "Vorname": "Externer",
     "Nachname": "Spieler",
+    "Position": "TW",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -55,6 +58,7 @@ externalu19 = [
   {
     "Vorname": "Anderer",
     "Nachname": "Externer",
+    "Position": "TW",
     "Verein": "TSC Eintracht",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -455,6 +459,7 @@ playersu16 = [
   {
     "Vorname": "Test",
     "Nachname": "Spieler",
+    "Position": "TW",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
     "Berichte": [{
@@ -469,6 +474,7 @@ playersu16 = [
   {
     "Vorname": "Spieler",
     "Nachname": "Zwei",
+    "Position": "TW",
     "Geburtsdatum": "11.04.2006",
     "Rating": "C",
     "Berichte": [{
@@ -486,6 +492,7 @@ externalu16 = [
   {
     "Vorname": "Externer",
     "Nachname": "Spieler",
+    "Position": "TW",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
@@ -501,6 +508,7 @@ externalu16 = [
   {
     "Vorname": "Anderer",
     "Nachname": "Externer",
+    "Position": "TW",
     "Verein": "DJK TuS Hordel",
     "Geburtsdatum": "11.04.2006",
     "Rating": "A",
