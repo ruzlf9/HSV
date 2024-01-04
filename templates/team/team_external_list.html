@@ -207,6 +207,33 @@
                   <i style="font-size:24px" class="fa">&#xf2b5;</i>
                 </button>
               </form>
+
+              <form method="post" style="margin-right: 4px;">
+                <div class="dropdown show dropright">
+                  <a class="btn btn-secondary dropdown-toggle" 
+                    href="#" role="button" 
+                    id="dropdownMenuLink" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false" 
+                    title="Spieler kopieren">
+                    <i style="font-size:24px" class="fa">&#xf061;</i>
+                  </a>
+
+                  <div class="dropdown-menu" 
+                    aria-labelledby="dropdownMenuLink">
+
+                    {% for team in teams %}
+                      <button type="submit" 
+                        class="btn btn-primary" 
+                        name="transfer_external_player" 
+                        value="{{ player['Vorname']+'_'+ player['Nachname']+'&'+team["id"] }}">
+                        {{ team["id"] }}
+                      </button>
+                    {% endfor %}
+                  </div>
+                </div>
+              </form>
             </td>
   
             <td>{{ player["Vorname"] }}</td>

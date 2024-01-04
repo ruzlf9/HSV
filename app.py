@@ -637,15 +637,42 @@ def team(team_id):
         if len(player_infos_new) == 0:
           new_team["players"].append(player_infos)
 
-        #current_team["players"] = [p for p in current_team["players"] if 
-        #                           p.get('Vorname') != vorname and 
-        #                           p.get("Nachname") != nachname]
+        team = TEAMS[ids[team_id]]
+        formation = team["formation"]
+        players = team["players"]
+        names = [p.split("_") for p in formation.values()]
+        colors = ["#ffffff" if len(n)==1 else 
+                  next((rating_mapping(player["Rating"]) for player in players if 
+                        player["Vorname"] == n[0] 
+                        and player["Nachname"] == n[1]), None)
+                  for n in names]
+        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+                               user=session["user"], 
+                               teams=TEAMS, rights=session["rights"], 
+                               colors_formation=colors, 
+                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
+                               externals = sorted(team["external"], key=lambda x: 
+                                                  x['Nachname'].upper()))
 
-        #for key, value in current_team["formation"].items():
-        #  if value == f"{vorname}_{nachname}":
-        #     position = key
-        #      break
-        #current_team["formation"][position] = ""
+      # Transfer external player
+      if request.form.get('transfer_external_player') != None:
+        player, new_team = request.form.get('transfer_external_player').split("&")
+
+        current_team = TEAMS[ids[team_id]]
+        new_team = TEAMS[ids[new_team]]
+
+        vorname, nachname = player.split("_")
+
+        player_infos = [p for p in current_team["external"] if 
+                        p.get('Vorname') == vorname and 
+                        p.get("Nachname") == nachname][0]
+
+        player_infos_new = [p for p in new_team["external"] if 
+                            p.get('Vorname') == vorname and 
+                            p.get("Nachname") == nachname]
+
+        if len(player_infos_new) == 0:
+          new_team["external"].append(player_infos)
 
         team = TEAMS[ids[team_id]]
         formation = team["formation"]

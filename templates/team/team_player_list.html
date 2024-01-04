@@ -184,18 +184,26 @@
               </form>
 
               <form method="post" style="margin-right: 4px;">
-                <!--<button type="submit" class="btn btn-primary" name="transfer_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}" title="Spieler übertragen">
-                  <i style="font-size:24px" class="fa">&#xf061;</i>
-                </button>-->
                 <div class="dropdown show dropright">
-                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="btn btn-secondary dropdown-toggle" 
+                    href="#" role="button" 
+                    id="dropdownMenuLink" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false" 
+                    title="Spieler kopieren">
                     <i style="font-size:24px" class="fa">&#xf061;</i>
                   </a>
 
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <div class="dropdown-menu" 
+                    aria-labelledby="dropdownMenuLink" t
+                    itle="Spieler übertragen">
+                    
                     {% for team in teams %}
-                      <!--<a class="dropdown-item" href="#">{{ team["id"] }} </a>-->
-                      <button type="submit" class="btn btn-primary" name="transfer_player" value="{{ player['Vorname']+'_'+ player['Nachname']+'&'+team["id"] }}" title="Spieler übertragen">
+                      <button type="submit" 
+                        class="btn btn-primary" 
+                        name="transfer_player" 
+                        value="{{ player['Vorname']+'_'+ player['Nachname']+'&'+team["id"] }}">
                         {{ team["id"] }}
                       </button>
                     {% endfor %}
