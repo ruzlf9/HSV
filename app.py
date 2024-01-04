@@ -680,9 +680,7 @@ def team(team_id):
         sorted_players = players
         
         if action == "vorn.inc":
-          print(players)
           sorted_players = sorted(players, key=lambda x: x['Vorname'].upper())
-          print(sorted_players)
         if action == "vorn.dec":
           sorted_players = sorted(players, key=lambda x: x['Vorname'].upper(), reverse=True)
           
@@ -743,7 +741,22 @@ def team(team_id):
               break
         team["formation"][position] = ""
         
-        return redirect(location="/"+team_id)
+        formation = team["formation"]
+        players = team["players"]
+        names = [p.split("_") for p in formation.values()]
+        colors = ["#ffffff" if len(n)==1 else 
+                  next((rating_mapping(player["Rating"]) for player in players if 
+                        player["Vorname"] == n[0] 
+                        and player["Nachname"] == n[1]), None)
+                  for n in names]
+        
+        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+                               user=session["user"], 
+                               teams=TEAMS, rights=session["rights"], 
+                               colors_formation=colors, 
+                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
+                               externals = sorted(team["external"], key=lambda x: 
+                                                  x['Nachname'].upper()))
 
       
       # Delete external Player
@@ -755,7 +768,22 @@ def team(team_id):
         team["external"] = [p for p in team["external"] if 
                            p.get('Vorname') != vorname and 
                            p.get("Nachname") != nachname]
-        return redirect(location="/"+team_id)
+        
+        formation = team["formation"]
+        players = team["players"]
+        names = [p.split("_") for p in formation.values()]
+        colors = ["#ffffff" if len(n)==1 else 
+                  next((rating_mapping(player["Rating"]) for player in players if 
+                        player["Vorname"] == n[0] 
+                        and player["Nachname"] == n[1]), None)
+                  for n in names]
+        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+                               user=session["user"], 
+                               teams=TEAMS, rights=session["rights"], 
+                               colors_formation=colors, 
+                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
+                               externals = sorted(team["external"], key=lambda x: 
+                                                  x['Nachname'].upper()))
 
       # Sign external player
       if request.form.get("sign_external_player") != None:
@@ -772,7 +800,22 @@ def team(team_id):
         if 'Verein' in player_infos:
           del player_infos['Verein']
         team["players"].append(player_infos)
-        return redirect(location="/"+team_id)
+        
+        formation = team["formation"]
+        players = team["players"]
+        names = [p.split("_") for p in formation.values()]
+        colors = ["#ffffff" if len(n)==1 else 
+                  next((rating_mapping(player["Rating"]) for player in players if 
+                        player["Vorname"] == n[0] 
+                        and player["Nachname"] == n[1]), None)
+                  for n in names]
+        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+                               user=session["user"], 
+                               teams=TEAMS, rights=session["rights"], 
+                               colors_formation=colors, 
+                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
+                               externals = sorted(team["external"], key=lambda x: 
+                                                  x['Nachname'].upper()))
         
       # Add own player
       if request.form.get("add_player") == "False":
