@@ -630,17 +630,22 @@ def team(team_id):
                         p.get('Vorname') == vorname and 
                         p.get("Nachname") == nachname][0]
 
-        new_team["players"].append(player_infos)
+        player_infos_new = [p for p in new_team["players"] if 
+                            p.get('Vorname') == vorname and 
+                            p.get("Nachname") == nachname]
 
-        current_team["players"] = [p for p in current_team["players"] if 
-                                   p.get('Vorname') != vorname and 
-                                   p.get("Nachname") != nachname]
+        if len(player_infos_new) == 0:
+          new_team["players"].append(player_infos)
 
-        for key, value in current_team["formation"].items():
-          if value == f"{vorname}_{nachname}":
-              position = key
-              break
-        current_team["formation"][position] = ""
+        #current_team["players"] = [p for p in current_team["players"] if 
+        #                           p.get('Vorname') != vorname and 
+        #                           p.get("Nachname") != nachname]
+
+        #for key, value in current_team["formation"].items():
+        #  if value == f"{vorname}_{nachname}":
+        #     position = key
+        #      break
+        #current_team["formation"][position] = ""
 
         team = TEAMS[ids[team_id]]
         formation = team["formation"]
@@ -721,8 +726,6 @@ def team(team_id):
              teams=TEAMS, rights=session["rights"], 
              colors_formation=colors, players=team["players"], externals=sorted_players)
 
-
-      
       # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
