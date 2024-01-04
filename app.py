@@ -616,6 +616,49 @@ def team(team_id):
       print("===========================================")
       print(request.form)
       print("===========================================")
+
+      # Transfer player
+      if request.form.get('transfer_player') != None:
+        player, new_team = request.form.get('transfer_player').split("&")
+        
+        current_team = TEAMS[ids[team_id]]
+        new_team = TEAMS[ids[new_team]]
+
+        vorname, nachname = player.split("_")
+        
+        player_infos = [p for p in current_team["players"] if 
+                        p.get('Vorname') == vorname and 
+                        p.get("Nachname") == nachname][0]
+
+        new_team["players"].append(player_infos)
+
+        current_team["players"] = [p for p in current_team["players"] if 
+                                   p.get('Vorname') != vorname and 
+                                   p.get("Nachname") != nachname]
+
+        for key, value in current_team["formation"].items():
+          if value == f"{vorname}_{nachname}":
+              position = key
+              break
+        current_team["formation"][position] = ""
+
+        team = TEAMS[ids[team_id]]
+        formation = team["formation"]
+        players = team["players"]
+        names = [p.split("_") for p in formation.values()]
+        colors = ["#ffffff" if len(n)==1 else 
+                  next((rating_mapping(player["Rating"]) for player in players if 
+                        player["Vorname"] == n[0] 
+                        and player["Nachname"] == n[1]), None)
+                  for n in names]
+        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
+                               user=session["user"], 
+                               teams=TEAMS, rights=session["rights"], 
+                               colors_formation=colors, 
+                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
+                               externals = sorted(team["external"], key=lambda x: 
+                                                  x['Nachname'].upper()))
+        
       
       # Sort player list
       if request.form.get("sort_players") != None:
@@ -680,6 +723,8 @@ def team(team_id):
              teams=TEAMS, rights=session["rights"], 
              colors_formation=colors, players=team["players"], externals=sorted_players)
 
+
+      
       # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
@@ -700,6 +745,7 @@ def team(team_id):
         
         return redirect(location="/"+team_id)
 
+      
       # Delete external Player
       if request.form.get("delete_external_player") != None:
         team = TEAMS[ids[team_id]]

@@ -185,25 +185,25 @@
           <tr>
             <td style="display: flex; align-items: center;">
               <form method="post" style="margin-right: 4px;">
-                <button type="submit" class="btn btn-danger" name="delete_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}">
+                <button type="submit" class="btn btn-danger" name="delete_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}" title="Spieler löschen">
                   <i style="font-size:24px" class="fa">&#xf1f8;</i>
                 </button>
               </form>
   
               <form action="{{ '/'+team['id']+'/external/'+player['Vorname']+'_'+player['Nachname']+'/edit' }}" method="get" style="margin-right: 4px;">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" title="Spieler bearbeiten">
                   <i style="font-size:24px" class="fa">&#xf044;</i>
                 </button>
               </form>
   
               <form action="/{{team['name']}}/external/{{ player['Vorname'] }}_{{ player['Nachname'] }}" method="get">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" title="Spieler anzeigen">
                   <i style="font-size:24px" class="fa">&#xf06e;</i>
                 </button>
               </form>
 
               <form method="post" style="margin-left: 4px;">
-                <button type="submit" class="btn btn-primary" name="sign_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}">
+                <button type="submit" class="btn btn-primary" name="sign_external_player" value="{{ player['Vorname']+'_'+ player['Nachname'] }}" title="Spieler verpflichten">
                   <i style="font-size:24px" class="fa">&#xf2b5;</i>
                 </button>
               </form>
