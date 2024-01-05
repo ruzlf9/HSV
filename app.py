@@ -1,6 +1,8 @@
 import datetime
 import numpy as np
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
+from team import transfer_player, transfer_external_player, sort_player_list
+from helping import rating_mapping
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -627,129 +629,18 @@ def team(team_id):
 
       # Transfer player
       if request.form.get('transfer_player') != None:
-        player, new_team = request.form.get('transfer_player').split("&")
-        
-        current_team = TEAMS[ids[team_id]]
-        new_team = TEAMS[ids[new_team]]
-
-        vorname, nachname = player.split("_")
-        
-        player_infos = [p for p in current_team["players"] if 
-                        p.get('Vorname') == vorname and 
-                        p.get("Nachname") == nachname][0]
-
-        player_infos_new = [p for p in new_team["players"] if 
-                            p.get('Vorname') == vorname and 
-                            p.get("Nachname") == nachname]
-
-        if len(player_infos_new) == 0:
-          new_team["players"].append(player_infos)
-
-        team = TEAMS[ids[team_id]]
-        formation = team["formation"]
-        players = team["players"]
-        names = [p.split("_") for p in formation.values()]
-        colors = ["#ffffff" if len(n)==1 else 
-                  next((rating_mapping(player["Rating"]) for player in players if 
-                        player["Vorname"] == n[0] 
-                        and player["Nachname"] == n[1]), None)
-                  for n in names]
-        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
-                               user=session["user"], 
-                               teams=TEAMS, rights=session["rights"], 
-                               colors_formation=colors, 
-                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
-                               externals = sorted(team["external"], key=lambda x: 
-                                                  x['Nachname'].upper()))
+        transfer_player(req=request.form.get('transfer_player'), TEAMS=TEAMS, 
+                        ids=ids, team_id=team_id)
 
       # Transfer external player
       if request.form.get('transfer_external_player') != None:
-        player, new_team = request.form.get('transfer_external_player').split("&")
-
-        current_team = TEAMS[ids[team_id]]
-        new_team = TEAMS[ids[new_team]]
-
-        vorname, nachname = player.split("_")
-
-        player_infos = [p for p in current_team["external"] if 
-                        p.get('Vorname') == vorname and 
-                        p.get("Nachname") == nachname][0]
-
-        player_infos_new = [p for p in new_team["external"] if 
-                            p.get('Vorname') == vorname and 
-                            p.get("Nachname") == nachname]
-
-        if len(player_infos_new) == 0:
-          new_team["external"].append(player_infos)
-
-        team = TEAMS[ids[team_id]]
-        formation = team["formation"]
-        players = team["players"]
-        names = [p.split("_") for p in formation.values()]
-        colors = ["#ffffff" if len(n)==1 else 
-                  next((rating_mapping(player["Rating"]) for player in players if 
-                        player["Vorname"] == n[0] 
-                        and player["Nachname"] == n[1]), None)
-                  for n in names]
-        return render_template("team/team.html", team=TEAMS[ids[team_id]], 
-                               user=session["user"], 
-                               teams=TEAMS, rights=session["rights"], 
-                               colors_formation=colors, 
-                               players=sorted(players, key=lambda x: x['Nachname'].upper()),
-                               externals = sorted(team["external"], key=lambda x: 
-                                                  x['Nachname'].upper()))
+        transfer_external_player(req=request.form.get('transfer_external_player'), 
+                                 TEAMS=TEAMS, ids=ids, team_id=team_id)
         
-      
       # Sort player list
       if request.form.get("sort_players") != None:
-        team = TEAMS[ids[team_id]]
-        formation = team["formation"]
-        type, action = request.form.get("sort_players").split("_")
-
-        type = "players" if type == "own" else "external"
-
-        print(type, action)
-        
-        players = team[type] 
-        names = [p.split("_") for p in formation.values()]
-        colors = ["#ffffff" if len(n)==1 else 
-                  next((rating_mapping(player["Rating"]) for player in team["players"] if 
-                        player["Vorname"] == n[0] 
-                        and player["Nachname"] == n[1]), None)
-                  for n in names]
-        sorted_players = players
-        
-        if action == "vorn.inc":
-          sorted_players = sorted(players, key=lambda x: x['Vorname'].upper())
-        if action == "vorn.dec":
-          sorted_players = sorted(players, key=lambda x: x['Vorname'].upper(), reverse=True)
-          
-        if action == "nachn.inc":
-          sorted_players = sorted(players, key=lambda x: x['Nachname'].upper())
-        if action == "nachn.dec":
-          sorted_players = sorted(players, key=lambda x: x['Nachname'].upper(), reverse=True)
-
-        if action == "verein.inc":
-          sorted_players = sorted(players, key=lambda x: x['Verein'].upper())
-        if action == "verein.dec":
-          sorted_players = sorted(players, key=lambda x: x['Verein'].upper(), reverse=True)
-          
-        if action == "gebdat.inc":
-          sorted_players = sorted(players, key=lambda x: 
-                                  (int(x['Geburtsdatum'].split(".")[2]), 
-                                  int(x['Geburtsdatum'].split(".")[1]),
-                                  int(x['Geburtsdatum'].split(".")[0])))
-        if action == "gebdat.dec":
-          sorted_players = sorted(players, key=lambda x: 
-            (int(x['Geburtsdatum'].split(".")[2]), 
-            int(x['Geburtsdatum'].split(".")[1]),
-            int(x['Geburtsdatum'].split(".")[0])), reverse=True)
-          
-        if action == "rating.inc":
-          sorted_players = sorted(players, key=lambda x: x['Rating'])
-        if action == "rating.dec":
-          sorted_players = sorted(players, key=lambda x: x['Rating'], reverse=True)
-
+        sorted_players, type, colors, team =sort_player_list(req=request.form.get("sort_players"),
+                                                TEAMS=TEAMS, ids=ids, team_id=team_id)
         if type == "players":
           return render_template("team/team.html", team=TEAMS[ids[team_id]], 
            user=session["user"], 
@@ -760,7 +651,7 @@ def team(team_id):
              user=session["user"], 
              teams=TEAMS, rights=session["rights"], 
              colors_formation=colors, players=team["players"], externals=sorted_players)
-
+        
       # Delete own Player
       if request.form.get("delete_player") != None:
         team = TEAMS[ids[team_id]]
@@ -796,7 +687,6 @@ def team(team_id):
                                externals = sorted(team["external"], key=lambda x: 
                                                   x['Nachname'].upper()))
 
-      
       # Delete external Player
       if request.form.get("delete_external_player") != None:
         team = TEAMS[ids[team_id]]
@@ -1060,16 +950,6 @@ def edit_player(team_id, player_id, external):
   else:
     return render_template('home/home_lock.html', error='Zugangsdaten falsch')
 
-
-def rating_mapping(rating):
-  rating_colors = {
-    "A": "#16B13D",
-    "B": "#7BB11B",
-    "C": "#B19719",
-    "D": "#B1671E",
-    "E": "#B12B1D"
-  }
-  return rating_colors.get(rating.strip(), "default_color")
   
 
 
